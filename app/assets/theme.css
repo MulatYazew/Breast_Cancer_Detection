@@ -1,0 +1,220 @@
+/* Breast CAD clinician-review theme: glassmorphism over the clinician
+   background photo, in a Siemens Healthineers / GE Healthcare / Philips-style
+   healthcare palette. Selectors are pinned to Streamlit 1.58's data-testid
+   hooks (verified against the live DOM) plus data-baseweb, the stable
+   styling hook BaseWeb-based widgets (selectbox, etc.) expose for exactly
+   this purpose — not the auto-generated st-emotion-cache-* utility classes,
+   which are unstable across Streamlit builds. */
+
+:root {
+    --color-primary: #2563EB;
+    --color-secondary: #06B6D4;
+    --color-success: #10B981;
+    --color-danger: #EF4444;
+    --color-warning: #F59E0B;
+
+    --overlay-color: rgba(5, 15, 35, 0.20);
+    --glass-bg: rgba(255, 255, 255, 0.10);
+    --glass-bg-strong: rgba(255, 255, 255, 0.16);
+    --glass-border: rgba(255, 255, 255, 0.28);
+    --glass-blur: 16px;
+
+    --radius-lg: 20px;
+    --radius-md: 16px;
+    --shadow-soft: 0 8px 32px rgba(5, 15, 35, 0.28);
+    --text-shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.45);
+    --transition-smooth: all 0.2s ease;
+}
+
+/* --- Background: photo + light blue tint + slight blur, never darkened away ---
+   .stApp (and body/html above it) report a *0px* box height from Streamlit's
+   own flex layout — real content still paints fine via a plain background-image
+   on such an element, but position:absolute/inset sizing collapses to nothing
+   on it, so a ::before overlay layer silently fails to render here. Putting
+   the photo on `body` directly (same proven-safe pattern) and blurring it via
+   backdrop-filter on .stApp — which blurs whatever is visually behind an
+   element without needing that element's own box to have real dimensions —
+   sidesteps the bug entirely while still keeping .stApp's own text content
+   perfectly sharp. */
+html, body {
+    min-height: 100vh; /* body's natural height only wraps its content — without
+                           this the image (and the page canvas below it) stops
+                           partway down on any short page, e.g. the maintenance
+                           screen with no case loaded yet. */
+}
+
+body {
+    background-image: linear-gradient(var(--overlay-color), var(--overlay-color)),
+                       url("__BACKGROUND_IMAGE_DATA_URI__") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+}
+
+.stApp {
+    background: transparent !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* --- Sidebar: frosted glass panel --- */
+[data-testid="stSidebar"] {
+    background: var(--glass-bg-strong) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-right: 1px solid var(--glass-border);
+}
+
+/* --- Top toolbar: glass instead of Streamlit's default opaque white strip --- */
+[data-testid="stHeader"] {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* --- Main content: one large glass panel holding the whole review flow --- */
+[data-testid="stMainBlockContainer"] {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 2rem 2.5rem !important;
+    margin-top: 1rem;
+}
+
+/* --- Typography: white with a soft shadow for legibility over the photo --- */
+.stApp, .stApp p, .stApp span, .stApp li,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stWidgetLabel"] p,
+[data-testid="stCaptionContainer"] {
+    color: #FFFFFF !important;
+    text-shadow: var(--text-shadow-soft);
+}
+
+[data-testid="stHeading"] h1,
+[data-testid="stHeading"] h2,
+[data-testid="stHeading"] h3 {
+    color: #FFFFFF !important;
+    text-shadow: var(--text-shadow-soft);
+    letter-spacing: -0.01em;
+}
+
+/* --- Alerts: translucent glass cards, accent color by kind, image stays
+   visible through them at every stage — including the maintenance notice --- */
+[data-testid="stAlertContainer"] {
+    background: var(--glass-bg-strong) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border) !important;
+    border-left: 4px solid var(--color-secondary) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-soft);
+    color: #FFFFFF !important;
+    transition: var(--transition-smooth);
+}
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentSuccess"]) {
+    border-left-color: var(--color-success) !important;
+}
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentWarning"]) {
+    border-left-color: var(--color-warning) !important;
+}
+[data-testid="stAlertContainer"]:has([data-testid="stAlertContentError"]) {
+    border-left-color: var(--color-danger) !important;
+}
+[data-testid="stAlertContainer"] p {
+    color: #FFFFFF !important;
+    text-shadow: var(--text-shadow-soft);
+}
+
+/* --- Buttons: glass by default, primary-blue on hover --- */
+.stButton button, [data-testid^="stBaseButton-"] {
+    background: var(--glass-bg-strong) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    color: #FFFFFF !important;
+    text-shadow: var(--text-shadow-soft);
+    transition: var(--transition-smooth);
+}
+.stButton button:hover, [data-testid^="stBaseButton-"]:hover {
+    background: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- File uploader: glass dropzone --- */
+[data-testid="stFileUploaderDropzone"] {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 2px dashed var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    transition: var(--transition-smooth);
+}
+[data-testid="stFileUploaderDropzone"]:hover {
+    border-color: var(--color-primary) !important;
+}
+[data-testid="stFileChip"] {
+    background: var(--glass-bg-strong) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+/* --- Selectbox (case picker): BaseWeb's stable styling hook, not the
+   auto-generated st-* atomic classes --- */
+[data-baseweb="select"] > div {
+    background: var(--glass-bg-strong) !important;
+    border-color: var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    color: #FFFFFF !important;
+}
+
+/* --- Progress bar: primary -> secondary gradient fill --- */
+[data-testid="stProgressBarTrack"] {
+    background: var(--glass-bg) !important;
+    border-radius: 999px !important;
+}
+[data-testid="stProgressBarTrack"] > div {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)) !important;
+    border-radius: 999px !important;
+}
+
+/* --- Images: rounded glass-framed cards --- */
+[data-testid="stImageContainer"] {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- Metrics: glass tile --- */
+[data-testid="stMetric"] {
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow-soft);
+}
+[data-testid="stMetricValue"] {
+    color: #FFFFFF !important;
+    text-shadow: var(--text-shadow-soft);
+}
+[data-testid="stMetricLabel"] {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* --- JSON / code blocks: keep readable on glass without fighting syntax colors --- */
+[data-testid="stJson"] {
+    background: rgba(5, 15, 35, 0.35) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+}

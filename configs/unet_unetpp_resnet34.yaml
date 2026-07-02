@@ -1,0 +1,11 @@
+# Optional stretch comparison: U-Net++ (nested skip connections) with a
+# ResNet34 encoder. More parameters / slower training; include only if
+# bandwidth allows. Merge on top of config.yaml:
+#   utils.config.load_config(overrides="configs/unet_unetpp_resnet34.yaml")
+
+unet:
+  architecture: unetpp
+  encoder: resnet34
+  encoder_weights: imagenet
+  checkpoint_dir: checkpoints/unet
+  checkpoint_name: best_unet_unetpp_resnet34.pth

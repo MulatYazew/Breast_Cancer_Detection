@@ -1,0 +1,11 @@
+# Recommended-upgrade comparison run: Attention U-Net with a ResNet34 encoder.
+# Adds attention gates on the skip connections to sharpen focus on the true
+# lesion boundary. Merge on top of config.yaml:
+#   utils.config.load_config(overrides="configs/unet_attention_resnet34.yaml")
+
+unet:
+  architecture: attention_unet
+  encoder: resnet34
+  encoder_weights: imagenet
+  checkpoint_dir: checkpoints/unet
+  checkpoint_name: best_unet_attention_resnet34.pth

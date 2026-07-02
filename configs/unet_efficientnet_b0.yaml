@@ -1,0 +1,10 @@
+# Optional secondary comparison run: plain U-Net with an EfficientNet-B0
+# encoder. Merge on top of config.yaml:
+#   utils.config.load_config(overrides="configs/unet_efficientnet_b0.yaml")
+
+unet:
+  architecture: unet
+  encoder: efficientnet-b0
+  encoder_weights: imagenet
+  checkpoint_dir: checkpoints/unet
+  checkpoint_name: best_unet_efficientnet_b0.pth

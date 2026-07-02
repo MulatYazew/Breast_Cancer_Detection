@@ -1,0 +1,113 @@
+# Breast Cancer CAD System — master configuration.
+# Every stage (preprocessing, yolo, unet, resnet, inference, app) reads from
+# this file via utils.config.load_config(). Partial overrides live under
+# configs/ (e.g. configs/quick_run.yaml) and are deep-merged on top of this.
+
+seed: 42
+deterministic: true
+device: null  # null = auto-select cuda > mps > cpu; or force "cuda" | "mps" | "cpu"
+
+paths:
+  raw_benign: dataset/BUSI_Jpeg/benign
+  raw_benign_mask: dataset/BUSI_Jpeg/benign_mask
+  raw_malignant: dataset/BUSI_Jpeg/malignant
+  raw_malignant_mask: dataset/BUSI_Jpeg/malignant_mask
+  splits_dir: dataset/splits
+  yolo_dataset_dir: dataset/yolo_dataset
+  checkpoints: checkpoints
+  logs: logs
+  results: results
+
+split:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  seed: 42
+
+preprocessing:
+  roi_size: [256, 256]          # unet/resnet ROI input size
+  min_mask_area_px: 20          # discard connected components smaller than this
+  bbox_pad_ratio: 0.08          # 8% padding around lesion bbox before crop
+
+augmentation:
+  # per-transform application probability bands, see preprocessing/augmentation.py
+  safe_prob: 0.4
+  cautious_prob: 0.3
+  yolo:
+    use_cautious_set: true
+    use_elastic: true
+    elastic_alpha: 20
+    elastic_sigma: 5
+  unet:
+    use_cautious_set: true
+    use_elastic: true
+    elastic_alpha: 15
+    elastic_sigma: 4
+  resnet:
+    use_cautious_set: false
+    use_elastic: false
+
+yolo:
+  weights: yolo26n.pt
+  imgsz: 640
+  epochs: 150
+  batch: 16
+  patience: 20          # early stopping patience (epochs)
+  lr0: 0.01
+  optimizer: auto
+  amp: true             # mixed precision
+  workers: 4
+  project: checkpoints/yolo
+  name: busi_tumor
+  resume: false
+  class_names: [tumor]
+
+unet:
+  architecture: unet          # unet | unetpp | attention_unet
+  encoder: resnet34           # resnet34 | efficientnet-b0 | efficientnet-b3
+  encoder_weights: imagenet
+  in_channels: 3
+  classes: 1
+  epochs: 100
+  batch_size: 16
+  lr: 1.0e-4
+  weight_decay: 1.0e-5
+  patience: 15
+  amp: true
+  loss:
+    dice_weight: 0.5
+    bce_weight: 0.5
+    focal_weight: 0.0
+    focal_gamma: 2.0
+  scheduler:
+    type: plateau           # plateau | cosine
+    factor: 0.5
+    patience: 5
+  checkpoint_dir: checkpoints/unet
+  checkpoint_name: best_unet.pth
+
+resnet:
+  pretrained: true
+  num_classes: 2
+  class_names: [benign, malignant]
+  freeze_backbone_epochs: 5   # linear-probe warmup before unfreezing
+  epochs: 60
+  batch_size: 32
+  lr: 1.0e-4
+  fine_tune_lr: 1.0e-5
+  weight_decay: 1.0e-4
+  patience: 12
+  amp: true
+  label_smoothing: 0.05
+  checkpoint_dir: checkpoints/resnet
+  checkpoint_name: best_resnet.pth
+
+inference:
+  yolo_weights: checkpoints/yolo/busi_tumor/weights/best.pt
+  unet_weights: checkpoints/unet/best_unet.pth
+  resnet_weights: checkpoints/resnet/best_resnet.pth
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+
+debug:
+  quick_run: false   # see configs/quick_run.yaml for the smoke-test override

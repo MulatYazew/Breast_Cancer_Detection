@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eaf3fb"/>
+      <stop offset="100%" stop-color="#dbe9f5"/>
+    </linearGradient>
+    <pattern id="crossPattern" width="120" height="120" patternUnits="userSpaceOnUse">
+      <g stroke="#bcd6ea" stroke-width="4" opacity="0.35">
+        <line x1="60" y1="40" x2="60" y2="80"/>
+        <line x1="40" y1="60" x2="80" y2="60"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#crossPattern)"/>
+
+  <!-- Physician illustration (flat placeholder art, swap for a real photo via app/assets/background.*) -->
+  <g transform="translate(980,150)">
+    <path d="M120 260 C60 260 20 320 20 420 L20 640 C20 660 40 680 60 680 L380 680 C400 680 420 660 420 640 L420 420 C420 320 380 260 320 260 Z" fill="#ffffff" stroke="#a9c6dd" stroke-width="4"/>
+    <path d="M200 270 L170 420 L220 400 Z" fill="#eef5fb"/>
+    <path d="M240 270 L270 420 L220 400 Z" fill="#eef5fb"/>
+    <rect x="195" y="220" width="50" height="60" rx="16" fill="#f2c9a0"/>
+    <circle cx="220" cy="170" r="70" fill="#f6d5ac"/>
+    <path d="M150 150 C150 90 290 90 290 150 C290 110 150 110 150 150 Z" fill="#6b4a3a"/>
+    <path d="M160 250 C140 300 140 340 190 360 C220 372 260 372 290 360 C340 340 340 300 320 250" fill="none" stroke="#5c7a8a" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="160" cy="248" r="10" fill="#5c7a8a"/>
+    <circle cx="320" cy="248" r="10" fill="#5c7a8a"/>
+    <circle cx="240" cy="368" r="16" fill="#5c7a8a"/>
+    <path d="M380 420 C440 420 470 460 470 510 L470 560 C470 580 450 590 430 580 L390 555 Z" fill="#ffffff" stroke="#a9c6dd" stroke-width="4"/>
+    <rect x="420" y="470" width="150" height="110" rx="10" fill="#25415a"/>
+    <rect x="432" y="482" width="126" height="86" rx="4" fill="#e9f4ff"/>
+    <polyline points="440,540 460,520 480,548 500,510 520,532 548,500" fill="none" stroke="#2f8f6f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

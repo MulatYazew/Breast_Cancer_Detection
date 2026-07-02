@@ -1,0 +1,29 @@
+# Smoke-test override: tiny subset, 1-2 epochs per stage. Merge on top of
+# config.yaml with:
+#   utils.config.load_config(overrides="configs/quick_run.yaml")
+# Purpose: prove the pipeline is wired correctly end-to-end before committing
+# to a real multi-hour training run. Does NOT get executed automatically —
+# training is always run manually.
+
+debug:
+  quick_run: true
+  quick_run_samples_per_class: 12
+
+yolo:
+  epochs: 2
+  batch: 4
+  patience: 2
+  name: busi_tumor_quickrun
+
+unet:
+  epochs: 2
+  batch_size: 4
+  patience: 2
+  checkpoint_name: quickrun_unet.pth
+
+resnet:
+  epochs: 2
+  batch_size: 4
+  freeze_backbone_epochs: 1
+  patience: 2
+  checkpoint_name: quickrun_resnet.pth
