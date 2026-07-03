@@ -221,12 +221,12 @@ results/
 logs/
 yolo26*.pt
 
-# User-supplied real background photo for app/app.py (likely licensed stock
-# art, shouldn't be committed) — the placeholder SVG in app/assets/ IS tracked.
-app/assets/background.jpg
-app/assets/background.jpeg
-app/assets/background.png
-app/assets/background_source.png
+# User-supplied real background photo for app.py (likely licensed stock art,
+# shouldn't be committed) — the placeholder SVG in assets/ IS tracked.
+assets/background.jpg
+assets/background.jpeg
+assets/background.png
+assets/background_source.png
 
 # macOS
 .DS_Store

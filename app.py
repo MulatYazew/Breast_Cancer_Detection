@@ -13,16 +13,18 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import sys
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Streamlit puts this script's own directory (app/) on sys.path, not the repo
-# root, so the repo-root absolute imports below (inference.*, preprocessing.*,
-# resnet.*, utils.*) would otherwise fail with ModuleNotFoundError. Must run
-# before any of those imports.
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+# app.py now lives at the repo root, so this is normally already on sys.path —
+# but not every launcher guarantees that (Hugging Face Spaces' runner among
+# them), and the repo-root absolute imports below (inference.*,
+# preprocessing.*, resnet.*, utils.*) would otherwise fail with
+# ModuleNotFoundError. Must run before any of those imports.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np
 import streamlit as st
@@ -97,9 +99,27 @@ def apply_theme() -> None:
 # --------------------------------------------------------------------------- #
 # Model loading (cached so switching cases doesn't reload weights)
 # --------------------------------------------------------------------------- #
+def _apply_checkpoint_env_overrides(config: dict) -> None:
+    """Let the deploy environment (e.g. HF Spaces "Variables and secrets") point
+    at checkpoint files without editing config.yaml. Falls back to the
+    config.yaml paths untouched when a var isn't set — today that's an empty
+    checkpoints/ tree, which load_pipeline()'s FileNotFoundError handling below
+    turns into the maintenance-mode UI rather than a crash."""
+    env_by_key = {
+        "yolo_weights": "YOLO_WEIGHTS_PATH",
+        "unet_weights": "UNET_WEIGHTS_PATH",
+        "resnet_weights": "RESNET_WEIGHTS_PATH",
+    }
+    for config_key, env_var in env_by_key.items():
+        value = os.getenv(env_var)
+        if value:
+            config["inference"][config_key] = value
+
+
 @st.cache_resource(show_spinner="Loading YOLO26n, U-Net, and ResNet50 checkpoints...")
 def load_pipeline() -> CADPipeline:
     config = load_config()
+    _apply_checkpoint_env_overrides(config)
     device = get_device(config.get("device"))
     return CADPipeline(config, device=device)
 
