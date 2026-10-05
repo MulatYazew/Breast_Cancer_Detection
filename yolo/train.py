@@ -18,6 +18,7 @@ from pathlib import Path
 
 from ultralytics import YOLO
 
+from utils.config import REPO_ROOT
 from utils.logging import get_logger
 from utils.seed import get_device, set_seed
 from yolo.model import build_yolo_model
@@ -41,6 +42,11 @@ def train_yolo(config: dict, data_yaml: str | Path, resume: bool = False) -> YOL
 
     logger.info("Training YOLO26n on device=%s, data=%s", device, data_yaml)
     model = build_yolo_model(yolo_cfg["weights"])
+    # Ultralytics resolves a relative ``project`` against its global ``runs_dir``
+    # setting (not the cwd), so anchor it to the repo root explicitly.
+    project_dir = Path(yolo_cfg["project"])
+    if not project_dir.is_absolute():
+        project_dir = REPO_ROOT / project_dir
 
     model.train(
         data=str(data_yaml),
@@ -52,7 +58,7 @@ def train_yolo(config: dict, data_yaml: str | Path, resume: bool = False) -> YOL
         optimizer=yolo_cfg["optimizer"],
         amp=yolo_cfg["amp"],
         workers=yolo_cfg["workers"],
-        project=yolo_cfg["project"],
+        project=str(project_dir),
         name=yolo_cfg["name"],
         resume=resume or yolo_cfg.get("resume", False),
         device=str(device),
@@ -61,7 +67,7 @@ def train_yolo(config: dict, data_yaml: str | Path, resume: bool = False) -> YOL
         exist_ok=True,
     )
 
-    best_path = Path(yolo_cfg["project"]) / yolo_cfg["name"] / "weights" / "best.pt"
+    best_path = project_dir / yolo_cfg["name"] / "weights" / "best.pt"
     logger.info("Training complete. Best checkpoint: %s", best_path)
     return model
 

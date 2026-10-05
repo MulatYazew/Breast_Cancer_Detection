@@ -13,6 +13,7 @@ from pathlib import Path
 import numpy as np
 
 from evaluation.metrics import bbox_iou
+from utils.config import REPO_ROOT
 from utils.logging import get_logger
 from yolo.model import load_trained_yolo
 
@@ -34,6 +35,11 @@ def evaluate_yolo(
     ``<save_dir>/eval/`` by Ultralytics itself.
     """
     model = load_trained_yolo(weights_path)
+    # Anchor to the repo root: Ultralytics resolves a relative ``project``
+    # against its global ``runs_dir`` setting, not the cwd.
+    save_dir = Path(save_dir)
+    if not save_dir.is_absolute():
+        save_dir = REPO_ROOT / save_dir
 
     metrics = model.val(
         data=str(data_yaml),
