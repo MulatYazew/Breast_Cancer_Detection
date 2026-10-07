@@ -1,12 +1,15 @@
-"""Stage 5: clinician-in-the-loop Streamlit demo.
+"""Stage 5: clinician-in-the-loop Streamlit demo (+ Stage 6 structured report).
 
 Loads the three trained checkpoints once (``st.cache_resource``) and walks a
 physician through detect -> review/correct -> segment -> review/correct ->
 classify for one or many uploaded ultrasound images, logging every
-accept/reject/manual-correction decision for later audit.
+accept/reject/manual-correction decision for later audit. Once the box and
+mask are approved, Stage 6 drafts a BI-RADS report on demand for the
+clinician to accept, edit or reject.
 
 All cascade logic (detect/crop/segment/mask/classify) is imported from
-``inference.pipeline`` — nothing here duplicates that chaining logic.
+``inference.pipeline`` and all reporting logic from ``reporting.service`` —
+nothing here duplicates either.
 """
 
 from __future__ import annotations
@@ -15,6 +18,7 @@ import io
 import json
 import os
 import sys
+import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -54,7 +58,8 @@ if not hasattr(_st_image_module, "image_to_url"):
 
 from streamlit_drawable_canvas import st_canvas  # noqa: E402
 
-from inference.pipeline import CADPipeline, apply_mask, to_chw_tensor  # noqa: E402
+import reporting  # noqa: E402  (dependency-free; heavy reporting deps load lazily)
+from inference.pipeline import CADPipeline, CaseResult, apply_mask, to_chw_tensor  # noqa: E402
 from preprocessing.roi_utils import crop_roi  # noqa: E402
 from resnet.gradcam import build_gradcam, gradcam_overlay  # noqa: E402
 from utils.config import load_config  # noqa: E402
@@ -67,6 +72,15 @@ AUDIT_LOG_PATH = Path("results/inference/audit_log.jsonl")
 CANVAS_MAX_WIDTH = 520
 ASSETS_DIR = Path(__file__).parent / "assets"
 THEME_CSS_PATH = ASSETS_DIR / "theme.css"
+
+REPORT_DISCLAIMER = "AI-generated draft for clinician review. Not a diagnosis."
+# Clinician choices; the model can never propose "6" (or "1") — see reporting.scoring.
+CLINICIAN_CATEGORIES = ["0", "1", "2", "3", "4A", "4B", "4C", "5", "6"]
+CATEGORY_COLORS = {
+    "0": "#6b7280", "1": "#16a34a", "2": "#16a34a", "3": "#0d9488", "4A": "#d97706",
+    "4B": "#ea580c", "4C": "#dc2626", "5": "#b91c1c", "6": "#7c3aed",
+}
+REVIEW_DECISIONS = {"accepted": "accept", "edited": "edit_accept", "rejected": "reject"}
 
 
 # --------------------------------------------------------------------------- #
@@ -136,6 +150,31 @@ def log_decision(case_id: str, stage: str, decision: str, detail: dict | None = 
     }
     with open(AUDIT_LOG_PATH, "a") as f:
         f.write(json.dumps(entry) + "\n")
+
+
+# --------------------------------------------------------------------------- #
+# Stage 6 reporting service (lazy: loaded on the first "Generate" click only)
+# --------------------------------------------------------------------------- #
+def get_reporting_config() -> dict:
+    return load_config().get("reporting") or {"enabled": False, "backend": "off"}
+
+
+def _hf_token() -> str | None:
+    try:
+        token = st.secrets.get("HF_TOKEN")
+    except Exception:  # noqa: BLE001 - no secrets.toml at all raises
+        token = None
+    return token or os.getenv("HF_TOKEN")
+
+
+@st.cache_resource(show_spinner="Loading reporting models (first report only)...")
+def get_report_service(_pipeline: CADPipeline):
+    """Embedding model + FAISS indexes + LLM, loaded once per server process."""
+    from reporting.build_index import resnet_case_embedder
+    from reporting.service import build_report_service
+
+    case_embedder = resnet_case_embedder(_pipeline.resnet_model, _pipeline.device)
+    return build_report_service(load_config(), hf_token=_hf_token(), case_embedder=case_embedder)
 
 
 # --------------------------------------------------------------------------- #
@@ -369,6 +408,17 @@ def render_case(pipeline: CADPipeline, case_id: str, image: np.ndarray, output_d
                 "classification": "model",
             }
         )
+        revise_det, revise_seg = st.columns(2)
+        if revise_det.button("Revise detection box", key=f"revise_det_{case_id}"):
+            log_decision(case_id, "detection", "revise")
+            state["ui_stage"] = "review_detection"
+            st.rerun()
+        if revise_seg.button("Revise segmentation mask", key=f"revise_seg_{case_id}"):
+            log_decision(case_id, "segmentation", "revise")
+            state["ui_stage"] = "review_segmentation"
+            st.rerun()
+
+        render_report_section(pipeline, case_id, state)
 
         bundle = build_case_bundle(case_id, state)
         st.download_button(
@@ -380,10 +430,315 @@ def render_case(pipeline: CADPipeline, case_id: str, image: np.ndarray, output_d
         )
 
 
+# --------------------------------------------------------------------------- #
+# Stage 6: structured report panel
+# --------------------------------------------------------------------------- #
+def _report_entry(case_id: str) -> dict | None:
+    return st.session_state.get("reports", {}).get(case_id)
+
+
+def report_status(case_id: str, state: dict) -> str:
+    """not_generated | stale | failed | pending_review | accepted | edited | rejected."""
+    entry = _report_entry(case_id)
+    if entry is None:
+        return "not_generated"
+    if state.get("mask") is None or entry["key"] != reporting.report_key(state["mask"], state["padded_bbox"]):
+        return "stale"
+    if entry["result"]["status"] != "ok":
+        return "failed"
+    return entry["review"]["status"] if entry["review"] else "pending_review"
+
+
+def _case_result_from_state(state: dict) -> CaseResult:
+    """The case as approved by the clinician; ``bbox`` is the padded box the ROI was cropped from."""
+    return CaseResult(
+        image=state["image"],
+        bbox=state["padded_bbox"],
+        bbox_source=state["bbox_source"],
+        detection_confidence=state.get("detection_confidence"),
+        roi_crop=state["roi_crop"],
+        mask=state["mask"],
+        mask_source=state["mask_source"],
+        masked_roi=state["masked_roi"],
+        predicted_class=state["predicted_class"],
+        confidence=state["confidence"],
+        class_probs=state["class_probs"],
+    )
+
+
+def _generate_report(pipeline: CADPipeline, case_id: str, state: dict, key: str) -> None:
+    with st.status("Preparing structured report...", expanded=True) as status:
+        try:
+            service = get_report_service(pipeline)
+        except Exception as exc:  # noqa: BLE001 - model download/auth/OOM: show, don't crash
+            logger.exception("Reporting service failed to load")
+            status.update(label="Reporting models could not be loaded", state="error")
+            st.error(f"The reporting models could not be loaded: {exc}")
+            return
+
+        def progress(step: str) -> None:
+            status.update(label=f"{step}...")
+            st.write(f"• {step}")
+
+        result = service.generate(_case_result_from_state(state), state["mask"], case_id=case_id, progress=progress)
+        status.update(
+            label="Draft report ready" if result.status == "ok" else "Draft report failed",
+            state="complete" if result.status == "ok" else "error",
+        )
+
+    st.session_state.setdefault("reports", {})[case_id] = {
+        "key": key,
+        "result": result.to_dict(),
+        "review": None,
+        "generated_monotonic": time.monotonic(),
+    }
+    log_decision(case_id, "report", "generated", {
+        "status": result.status,
+        "ai_category": result.category,
+        "error_kind": result.error_kind,
+        "model_id": result.model_id,
+        "backend": result.backend,
+        "prompt_version": result.prompt_version,
+        "kb_version": result.kb_version,
+        "retrieved_ids": result.retrieved_ids,
+        "similar_case_ids": result.similar_case_ids,
+        "mask_source": result.mask_source,
+        "report_key": key,
+        "attempts": result.attempts,
+        "timing": result.timings,
+    })
+
+
+def _record_review(case_id: str, entry: dict, status: str, final_category: str | None,
+                   recommendation: str | None, notes: str) -> None:
+    result = entry["result"]
+    entry["review"] = {
+        "status": status,
+        "final_category": final_category,
+        "recommendation": recommendation,
+        "notes": notes,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+    }
+    log_decision(case_id, stage="report", decision=REVIEW_DECISIONS[status], detail={
+        "ai_category": result["category"],
+        "final_category": final_category,
+        "changed": final_category is not None and final_category != result["category"],
+        "recommendation_changed": recommendation is not None and recommendation != result["recommendation"],
+        "notes": notes,
+        "model_id": result["model_id"],
+        "backend": result["backend"],
+        "prompt_version": result["prompt_version"],
+        "kb_version": result["kb_version"],
+        "retrieved_ids": [h["id"] for h in result["knowledge_hits"]],
+        "similar_case_ids": [c["id"] for c in result["similar_cases"]],
+        "mask_source": result["mask_source"],
+        "bbox_source": result["bbox_source"],
+        "report_key": entry["key"],
+        "timing": {
+            "generation_s": result["timings"],
+            "review_latency_s": round(time.monotonic() - entry["generated_monotonic"], 1),
+        },
+    })
+
+
+def _category_badge(category: str, caption: str) -> None:
+    color = CATEGORY_COLORS.get(category, "#6b7280")
+    st.markdown(
+        f'<span style="background:{color};color:#fff;padding:0.35rem 0.9rem;border-radius:999px;'
+        f'font-weight:700;font-size:1.15rem;">BI-RADS {category}</span>'
+        f'&nbsp;&nbsp;<span style="opacity:0.85">{caption}</span>',
+        unsafe_allow_html=True,
+    )
+
+
+def _render_features_tab(result: dict) -> None:
+    rows = [
+        {
+            "Category": d["category"],
+            "Value": d["value"],
+            "Assessable": "yes" if d["assessable"] else "not assessable",
+            "Supports": d["polarity"],
+            "Supporting numbers": ", ".join(f"{k}={v}" for k, v in d["evidence"].items()),
+            "Note": d["note"],
+        }
+        for d in result["descriptors"]
+    ]
+    st.dataframe(rows, hide_index=True, use_container_width=True)
+    with st.expander("Raw radiomic features"):
+        st.json(result["features"])
+
+
+def _render_evidence_tab(result: dict) -> None:
+    st.markdown("**Retrieved BI-RADS knowledge**")
+    for hit in result["knowledge_hits"]:
+        how = "pinned (descriptor definition)" if hit["pinned"] else f"similarity {hit['score']:.2f}"
+        with st.expander(f"kb:{hit['id']} · {hit['title']} · {how}"):
+            st.write(hit["text"])
+    st.markdown("**Most similar training cases** (ResNet50 embedding, ground-truth labels)")
+    if not result["similar_cases"]:
+        st.caption("Similar-case index not available. Build it with `python -m reporting.build_index`.")
+        return
+    for col, case in zip(st.columns(len(result["similar_cases"])), result["similar_cases"]):
+        if Path(case["thumbnail"]).exists():
+            col.image(case["thumbnail"], use_container_width=True)
+        col.caption(f"{case['id']}  \n**{case['label']}** · sim {case['similarity']:.2f}")
+
+
+def _render_draft_tab(result: dict, review: dict | None) -> None:
+    if result["status"] != "ok":
+        st.error(result["error"] or "No draft available.")
+        st.caption("The model's text is never shown unless it passed validation. See the Features tab.")
+        return
+    _category_badge(result["category"], f"likelihood of malignancy {result['likelihood']}")
+    if review and review["status"] == "edited" and review["final_category"] != result["category"]:
+        st.markdown("Clinician-edited final category:")
+        _category_badge(review["final_category"], "set by clinician")
+
+    reasons = "; ".join(result["confidence_reasons"])
+    if result["confidence"] == "low":
+        st.warning(f"⚠️ **Low confidence.** {reasons}")
+    elif result["confidence"] == "moderate":
+        st.info(f"Moderate confidence. {reasons}")
+    else:
+        st.success("High confidence: the lexicon features and the classifier agree.")
+
+    st.markdown("**Rationale**")
+    st.dataframe(
+        [{"Descriptor": r["descriptor"], "Value": r["value"], "Supports": r["supports"], "Source": r["source"]}
+         for r in result["rationale"]],
+        hide_index=True, use_container_width=True,
+    )
+    st.markdown("**Recommendation**")
+    if review and review["status"] == "edited" and review["recommendation"] != result["recommendation"]:
+        st.write(review["recommendation"])
+        st.caption(f"Edited by clinician. AI draft: {result['recommendation']}")
+    else:
+        st.write(result["recommendation"])
+    if review and review.get("notes"):
+        st.markdown("**Clinician notes**")
+        st.write(review["notes"])
+    st.markdown("**Limitations**")
+    st.markdown("\n".join(f"- {item}" for item in result["limitations"]))
+    st.caption(
+        f"Model {result['model_id']} ({result['backend']}) · prompt {result['prompt_version']} · "
+        f"knowledge base {result['kb_version']} · rule score {result['rule_score']} · "
+        f"attempts {result['attempts']} · "
+        f"{sum(result['timings'].values()):.1f}s"
+    )
+
+
+def _render_patient_tab(result: dict, review: dict | None) -> None:
+    if result["status"] == "ok" and review and review["status"] in ("accepted", "edited"):
+        st.write(result["patient_summary"])
+    else:
+        st.info("🔒 The patient summary is locked until the clinician accepts the report.")
+
+
+def render_report_section(pipeline: CADPipeline, case_id: str, state: dict) -> None:
+    """Stage 6 panel. Only reachable once the box and mask are approved (``ui_stage == "report"``)."""
+    cfg = get_reporting_config()
+    backend = cfg.get("backend", "off")
+    if backend == "off":
+        return
+    st.markdown("### Stage 6 — Structured report")
+    if not cfg.get("enabled", False):
+        st.info("Structured reporting is turned off on this deployment.")
+        return
+    missing = reporting.missing_dependencies(backend)
+    if missing:
+        logger.warning("Reporting dependencies missing: %s", missing)
+        st.info(
+            "Structured reporting isn't installed on this deployment "
+            f"(missing: {', '.join(missing)}; see requirements-reporting.txt)."
+        )
+        return
+    if state.get("mask") is None or state.get("bbox") is None:
+        st.caption("Available once the detection box and segmentation mask are accepted or corrected.")
+        return
+
+    key = reporting.report_key(state["mask"], state["padded_bbox"])
+    entry = _report_entry(case_id)
+    stale = entry is not None and entry["key"] != key
+
+    if entry is None:
+        button_label = "Generate draft report"
+    elif stale:
+        button_label = "Regenerate draft report"
+    elif entry["result"]["status"] != "ok":
+        button_label = "Retry"
+    else:
+        button_label = None  # unchanged inputs: never recompute
+    if button_label and st.button(button_label, key=f"generate_report_{case_id}", type="primary"):
+        _generate_report(pipeline, case_id, state, key)
+        st.rerun()
+
+    if entry is None:
+        st.caption("Drafts a BI-RADS report from the approved mask. Runs only when you click the button.")
+        return
+
+    result, review = entry["result"], entry["review"]
+    if stale:
+        st.warning(
+            "⚠️ **Stale report.** The box or mask changed after this report was generated. "
+            "Regenerate it before accepting."
+        )
+    if result["status"] == "error" and result["error_kind"] in ("rate_limit", "timeout"):
+        st.error(f"{result['error']} Please wait a moment and click **Retry**.")
+    elif result["status"] != "ok":
+        st.error(result["error"])
+
+    tabs = st.tabs(["Features", "Evidence", "Draft report", "Patient summary"])
+    renderers = (
+        lambda: _render_features_tab(result),
+        lambda: _render_evidence_tab(result),
+        lambda: _render_draft_tab(result, review),
+        lambda: _render_patient_tab(result, review),
+    )
+    for tab, render in zip(tabs, renderers):
+        with tab:
+            st.warning(REPORT_DISCLAIMER, icon="🩺")
+            render()
+
+    if result["status"] != "ok":
+        return
+    if review is not None:
+        verdict = {"accepted": "Accepted", "edited": "Edited and accepted", "rejected": "Rejected"}[review["status"]]
+        final = f" · final category {review['final_category']}" if review["final_category"] else ""
+        (st.error if review["status"] == "rejected" else st.success)(f"{verdict} by clinician{final}.")
+        return
+
+    edit_flag = f"editing_report_{case_id}"
+    accept_col, edit_col, reject_col = st.columns(3)
+    if accept_col.button("Accept report", key=f"accept_report_{case_id}", disabled=stale):
+        _record_review(case_id, entry, "accepted", result["category"], result["recommendation"], "")
+        st.rerun()
+    if edit_col.button("Edit and accept", key=f"edit_report_{case_id}", disabled=stale):
+        st.session_state[edit_flag] = True
+    if reject_col.button("Reject", key=f"reject_report_{case_id}"):
+        _record_review(case_id, entry, "rejected", None, None, "")
+        st.rerun()
+
+    if st.session_state.get(edit_flag) and not stale:
+        with st.form(f"edit_report_form_{case_id}"):
+            category = st.selectbox(
+                "Final BI-RADS category", CLINICIAN_CATEGORIES,
+                index=CLINICIAN_CATEGORIES.index(result["category"]),
+                help="Category 6 (known biopsy-proven malignancy) can only be set by the clinician.",
+            )
+            recommendation = st.text_area("Recommendation", value=result["recommendation"])
+            notes = st.text_area("Clinician notes")
+            if st.form_submit_button("Save and accept"):
+                st.session_state.pop(edit_flag, None)
+                _record_review(case_id, entry, "edited", category, recommendation, notes)
+                st.rerun()
+
+
 def build_case_bundle(case_id: str, state: dict) -> bytes:
-    """Zip: result JSON + original/ROI/masked-ROI PNGs — the per-case download."""
+    """Zip: result JSON + original/ROI/masked-ROI PNGs (+ Stage 6 report) — the per-case download."""
     from PIL import Image
 
+    entry = _report_entry(case_id)
+    status = report_status(case_id, state)
     summary = {
         "case_id": case_id,
         "bbox": list(state["bbox"]),
@@ -392,11 +747,20 @@ def build_case_bundle(case_id: str, state: dict) -> bytes:
         "predicted_class": state["predicted_class"],
         "confidence": state["confidence"],
         "class_probs": state["class_probs"],
+        "report_status": status,
     }
 
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w") as zf:
         zf.writestr(f"{case_id}_result.json", json.dumps(summary, indent=2))
+        if entry is not None:
+            from reporting.export import report_to_markdown
+
+            zf.writestr(
+                f"{case_id}_report.json",
+                json.dumps({"report_status": status, "report": entry["result"], "review": entry["review"]}, indent=2),
+            )
+            zf.writestr(f"{case_id}_report.md", report_to_markdown(entry["result"], entry["review"], status == "stale"))
         for name, array in (
             ("original", state["image"]),
             ("roi_crop", state["roi_crop"]),
@@ -427,14 +791,24 @@ def build_batch_summary_csv() -> bytes:
 
     buffer = io.StringIO()
     writer = csv.writer(buffer)
+    # "confidence" is the classifier's; the Stage 6 report's is "report_confidence".
     writer.writerow(
-        ["case_id", "bbox_source", "mask_source", "predicted_class", "confidence"]
+        ["case_id", "bbox_source", "mask_source", "predicted_class", "confidence",
+         "ai_category", "final_category", "changed", "report_confidence", "report_status"]
     )
     for case_id, state in st.session_state.get("case_states", {}).items():
         if state.get("ui_stage") != "report":
             continue
+        entry = _report_entry(case_id)
+        result = entry["result"] if entry else {}
+        review = (entry or {}).get("review") or {}
+        ai_category = result.get("category") if result.get("status") == "ok" else None
+        final_category = review.get("final_category")
         writer.writerow(
-            [case_id, state["bbox_source"], state["mask_source"], state["predicted_class"], state["confidence"]]
+            [case_id, state["bbox_source"], state["mask_source"], state["predicted_class"], state["confidence"],
+             ai_category or "", final_category or "",
+             bool(final_category and ai_category and final_category != ai_category),
+             result.get("confidence") or "", report_status(case_id, state)]
         )
     return buffer.getvalue().encode()
 

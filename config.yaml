@@ -111,3 +111,25 @@ inference:
 
 debug:
   quick_run: false   # see configs/quick_run.yaml for the smoke-test override
+
+# Stage 6: structured BI-RADS report (reporting/ package, Stage 6 panel in app.py).
+# Needs `pip install -r requirements-reporting.txt`; without it the app still
+# runs and the Stage 6 section shows a short notice instead.
+reporting:
+  enabled: true
+  backend: local              # local | hf_api | off ("off" = app behaves exactly as before Stage 6)
+  llm:
+    # Qwen2.5-3B-Instruct is under the Qwen RESEARCH license (non-commercial
+    # only). Apache-2.0 alternatives: Qwen/Qwen2.5-1.5B-Instruct (faster, CPU-friendly)
+    # or Qwen/Qwen2.5-7B-Instruct (better, needs GPU locally / good for hf_api).
+    model_id: Qwen/Qwen2.5-3B-Instruct
+    api_model_id: Qwen/Qwen2.5-3B-Instruct   # used when backend = hf_api
+    max_new_tokens: 900
+    temperature: 0.2
+    timeout_s: 120              # hf_api request timeout
+    max_retries: 2              # extra attempts after a schema-validation failure
+  embedding_model_id: sentence-transformers/all-MiniLM-L6-v2
+  knowledge_dir: reporting/knowledge
+  index_dir: results/reporting/index   # case index built by `python -m reporting.build_index`
+  top_k_knowledge: 6
+  top_k_cases: 5
