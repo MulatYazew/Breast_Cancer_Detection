@@ -138,7 +138,7 @@ reporting:
   # default; the clinician can reveal it per case with an explicit toggle.
   show_rule_category: false
 
-# BI-RADS-aware research workflow (notebooks/01-06, runtime in bus_research/).
+# BI-RADS-aware research workflow (Part 2 of notebooks/Breast_CAD_Master.ipynb, runtime in bus_research/).
 # Needs `pip install -r requirements-research.txt`; without it the app shows a
 # short notice in the "Quantitative analysis (research)" panel and nothing else changes.
 research:

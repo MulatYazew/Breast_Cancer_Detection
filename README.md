@@ -29,8 +29,7 @@ inference/            the cascaded YOLO->U-Net->ResNet50 pipeline + visualizatio
 evaluation/           metrics shared across stages + end-to-end cascade evaluation
 visualization/        shared plotting primitives (overlays, curves, confusion matrices)
 utils/                config loader, seeding/device, logging
-notebooks/Breast_CAD_Master.ipynb   consolidated end-to-end notebook (all stages)
-notebooks/0[1-6]_*.ipynb   BI-RADS-aware quantitative research workflow (see below)
+notebooks/Breast_CAD_Master.ipynb   consolidated notebook: all stages (Part 1) + BI-RADS-aware research workflow (Part 2, see below)
 bus_research/         inference-time runtime for that workflow (radiomics, feature store, RAG, classifier, report)
 reporting/            Stage 6 structured report (heuristic lexicon + rule proposal, gated in the app)
 tests/                pytest suite (synthetic fixtures + cascade regression)
@@ -94,16 +93,16 @@ streamlit run app.py
 Open `notebooks/Breast_CAD_Master.ipynb`. Every training cell is clearly marked and
 meant to be run manually, not via "Run All".
 
-## BI-RADS-aware quantitative research workflow (notebooks 01–06)
+## BI-RADS-aware quantitative research workflow (master notebook, Part 2)
 
 > Research model output — not a clinical diagnosis. This dataset has **no BI-RADS labels**, so the
 > workflow produces **no BI-RADS category**. It reports "BI-RADS assessment unavailable" instead.
 
-The research workflow lives in six executable notebooks under `notebooks/`. The functions both the
+The research workflow lives in six sections (01–06) in Part 2 of `notebooks/Breast_CAD_Master.ipynb`. The functions both the
 notebooks and the app need at inference time are in a thin runtime package, `bus_research/`.
 Every model and index the app uses is a saved notebook artifact; the app never trains anything.
 
-| notebook | does | writes |
+| section | does | writes |
 |---|---|---|
 | `01_dataset_audit_and_birads_labels` | labels, masks, geometry, split coverage, exact + near-duplicate leakage, BI-RADS label search and gate | `results/audit/dataset_audit.json` |
 | `02_unet_segmentation_and_radiomics` | runs YOLO26n/U-Net, maps masks to native resolution, mask QC, PyRadiomics (shape2D, firstorder, GLCM, GLRLM, GLSZM, GLDM, NGTDM), predicted-vs-GT feature agreement | `results/radiomics/records/*.json`, `manifest.json` |
@@ -116,12 +115,9 @@ Every model and index the app uses is a saved notebook artifact; the app never t
 ```bash
 pip install -r requirements.txt -r requirements-research.txt
 pip install -r requirements-reporting.txt      # only for the local / hf_api LLM providers
-for nb in notebooks/0[1-6]_*.ipynb; do
-  jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=5400 "$nb"
-done
 pytest tests/                                  # 58 tests: runtime, schema, RAG, report validator, app panel, cascade regression
 ```
-Run them in order 01 → 06. Notebook 02 needs the trained checkpoints. Notebook 05 loads the cached
+Run the Part 2 sections by hand, in order 01 → 06, not with "Run All" (the notebook also holds the training cells). Section 02 needs the trained checkpoints. Section 05 loads the cached
 Qwen2.5-3B (set `RUN_LOCAL_LLM = False` to skip). Configuration lives in `config.yaml → research`.
 
 **In the app**, once the box and mask are approved, a *Quantitative analysis (research)* panel:

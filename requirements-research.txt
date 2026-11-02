@@ -1,4 +1,4 @@
-# Optional: BI-RADS-aware research workflow (bus_research/ runtime + notebooks/01-06).
+# Optional: BI-RADS-aware research workflow (bus_research/ runtime + Part 2 of notebooks/Breast_CAD_Master.ipynb).
 # Install on top of requirements.txt:  pip install -r requirements-research.txt
 # The app runs without these; its "Quantitative analysis (research)" panel then
 # shows which packages are missing.

@@ -1,7 +1,7 @@
-"""Inference-time runtime for the BI-RADS-aware research workflow (notebooks 01-06).
+"""Inference-time runtime for the BI-RADS-aware research workflow (master notebook, Part 2).
 
 The research *workflows* (dataset audit, batch extraction, training, evaluation,
-reference ingestion, report generation) live in ``notebooks/0[1-6]_*.ipynb``.
+reference ingestion, report generation) live in Part 2 of ``notebooks/Breast_CAD_Master.ipynb``.
 This package holds only the functions those notebooks *and* ``app.py`` both
 need at inference time, so the app loads the notebooks' saved artifacts
 instead of re-implementing them:

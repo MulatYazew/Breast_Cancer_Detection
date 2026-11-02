@@ -943,7 +943,7 @@ def render_research_section(case_id: str, state: dict) -> None:
                 st.markdown(f"**`{h['chunk_id']}`** · {h['title']} · {where} · *{h['evidence_tier']}*")
                 st.caption(h["text"][:600])
     else:
-        st.caption("Reference index not built (run notebooks/03_json_feature_store_and_rag.ipynb).")
+        st.caption("Reference index not built (run section 03 of notebooks/Breast_CAD_Master.ipynb).")
 
     if case["report"] is None:
         if st.button("Generate research report", key=f"research_report_{case_id}"):
