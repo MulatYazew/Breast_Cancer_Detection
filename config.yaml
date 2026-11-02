@@ -133,3 +133,76 @@ reporting:
   index_dir: results/reporting/index   # case index built by `python -m reporting.build_index`
   top_k_knowledge: 6
   top_k_cases: 5
+  # Stage 6's descriptors are heuristic estimates and its BI-RADS category is an
+  # unvalidated rule proposal (BUSI has no BI-RADS labels). Keep it hidden by
+  # default; the clinician can reveal it per case with an explicit toggle.
+  show_rule_category: false
+
+# BI-RADS-aware research workflow (notebooks/01-06, runtime in bus_research/).
+# Needs `pip install -r requirements-research.txt`; without it the app shows a
+# short notice in the "Quantitative analysis (research)" panel and nothing else changes.
+research:
+  radiomics:
+    output_dir: results/radiomics
+    bin_width: 8                 # 8-bit B-mode -> at most 32 gray levels
+    feature_classes: [shape2D, firstorder, glcm, glrlm, glszm, gldm, ngtdm]
+    image_types: [Original]      # no wavelet/LoG: ~8x more features on ~450 training lesions, LoG sigma needs mm
+    normalize: false
+    resampled_pixel_spacing: null   # no resampling; BUSI has no physical spacing -> pixel units
+    interpolator: sitkBSpline
+    label: 1
+    keep_largest_component: true
+    qc:
+      min_area_px: 50
+      max_area_fraction: 0.6
+      min_largest_component_fraction: 0.9
+  models:
+    output_dir: results/models
+    classifier_dir: results/models/radiomics_classifier
+  rag:
+    index_dir: results/rag/index
+    chunk_words: 120
+    chunk_overlap_words: 30
+    top_k: 5
+    embedding_model_id: null     # BM25 only (deterministic); e.g. sentence-transformers/all-MiniLM-L6-v2 for hybrid
+    forbidden_dirs: [results, dataset/splits, dataset/yolo_dataset]   # never index case data or labels
+    sources:
+      - id: birads-card
+        kind: pdf
+        path: "dataset/BUSI_Jpeg/BIRADS Reference Card (1).pdf"
+        title: ACR BI-RADS Atlas Fifth Edition — Quick Reference
+        citation: "American College of Radiology. ACR BI-RADS Atlas, 5th ed. Quick Reference card (07.15)."
+        version: "5th edition (card dated 07.15)"
+        url: https://www.acr.org/birads
+        evidence_tier: primary_reference
+        license_note: Provided with the project; the full Atlas is NOT available to this system.
+      - id: pyradiomics-docs
+        kind: python_docstrings
+        modules: [radiomics.shape2D, radiomics.firstorder, radiomics.glcm, radiomics.glrlm, radiomics.glszm,
+                  radiomics.gldm, radiomics.ngtdm]
+        title: PyRadiomics feature definitions
+        citation: "van Griethuysen JJM et al. Computational Radiomics System to Decode the Radiographic Phenotype. Cancer Res. 2017;77(21):e104-e107. Feature docs from the installed package."
+        version: null            # filled from radiomics.__version__ at ingestion
+        url: https://pyradiomics.readthedocs.io
+        evidence_tier: official_documentation
+      - id: project-us-lexicon-notes
+        kind: markdown
+        path: reporting/knowledge/us_lexicon.md
+        title: Project notes — BI-RADS US lexicon paraphrase (Stage 6)
+        citation: Project-authored paraphrase; not verified against the full ACR Atlas.
+        version: null
+        url: null
+        evidence_tier: secondary_project_notes
+      - id: project-category-notes
+        kind: markdown
+        path: reporting/knowledge/assessment_categories.md
+        title: Project notes — BI-RADS assessment categories paraphrase (Stage 6)
+        citation: Project-authored paraphrase; likelihood ranges not verified against the full ACR Atlas.
+        version: null
+        url: null
+        evidence_tier: secondary_project_notes
+  reports:
+    output_dir: results/reports/research
+    llm_backend: stub            # stub (offline, deterministic) | local (reporting.llm.model_id) | hf_api
+    allow_external_llm: false    # hf_api sends the de-identified payload off-machine; must be explicitly true
+    max_retries: 2

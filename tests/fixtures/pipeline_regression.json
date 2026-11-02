@@ -1,0 +1,24 @@
+{
+ "malignant (10).png": {
+  "bbox": [
+   192,
+   24,
+   319,
+   92
+  ],
+  "predicted_class": "benign",
+  "p_malignant": 0.2921,
+  "mask_area": 31208
+ },
+ "benign (100).png": {
+  "bbox": [
+   17,
+   100,
+   108,
+   164
+  ],
+  "predicted_class": "benign",
+  "p_malignant": 0.1349,
+  "mask_area": 37338
+ }
+}

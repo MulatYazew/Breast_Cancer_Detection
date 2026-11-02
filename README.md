@@ -30,6 +30,10 @@ evaluation/           metrics shared across stages + end-to-end cascade evaluati
 visualization/        shared plotting primitives (overlays, curves, confusion matrices)
 utils/                config loader, seeding/device, logging
 notebooks/Breast_CAD_Master.ipynb   consolidated end-to-end notebook (all stages)
+notebooks/0[1-6]_*.ipynb   BI-RADS-aware quantitative research workflow (see below)
+bus_research/         inference-time runtime for that workflow (radiomics, feature store, RAG, classifier, report)
+reporting/            Stage 6 structured report (heuristic lexicon + rule proposal, gated in the app)
+tests/                pytest suite (synthetic fixtures + cascade regression)
 app.py, assets/   Stage 5 clinician-in-the-loop demo (Streamlit; entry point for Hugging Face Spaces)
 train.py / evaluate.py / inference.py   root CLI entry points
 config.yaml            single source of truth for paths + hyperparameters
@@ -89,6 +93,57 @@ streamlit run app.py
 **Notebook (recommended for exploration/thesis writeup):**
 Open `notebooks/Breast_CAD_Master.ipynb`. Every training cell is clearly marked and
 meant to be run manually, not via "Run All".
+
+## BI-RADS-aware quantitative research workflow (notebooks 01–06)
+
+> Research model output — not a clinical diagnosis. This dataset has **no BI-RADS labels**, so the
+> workflow produces **no BI-RADS category**. It reports "BI-RADS assessment unavailable" instead.
+
+The research workflow lives in six executable notebooks under `notebooks/`. The functions both the
+notebooks and the app need at inference time are in a thin runtime package, `bus_research/`.
+Every model and index the app uses is a saved notebook artifact; the app never trains anything.
+
+| notebook | does | writes |
+|---|---|---|
+| `01_dataset_audit_and_birads_labels` | labels, masks, geometry, split coverage, exact + near-duplicate leakage, BI-RADS label search and gate | `results/audit/dataset_audit.json` |
+| `02_unet_segmentation_and_radiomics` | runs YOLO26n/U-Net, maps masks to native resolution, mask QC, PyRadiomics (shape2D, firstorder, GLCM, GLRLM, GLSZM, GLDM, NGTDM), predicted-vs-GT feature agreement | `results/radiomics/records/*.json`, `manifest.json` |
+| `03_json_feature_store_and_rag` | schema validation, determinism check, authorized-reference ingestion, BM25 index with chunk citations, label-leakage guard | `results/radiomics/schema/`, `results/rag/index/` |
+| `04_classifier_training_and_evaluation` | grouped-CV radiomics baselines (LR / RF / GBM) vs ResNet50, Platt calibration, bootstrap CIs, BI-RADS training interface (blocked) | `results/models/radiomics_classifier/` |
+| `05_llm_report_generation_and_rag` | facts-first JSON report, validator (no BI-RADS claims, directives, invented numbers/descriptors, unknown citations), abstention, local Qwen run | `results/reports/research/` |
+| `06_end_to_end_ultrasound_demo` | one image through the whole chain, with graceful handling of every missing component | record + report |
+
+**Setup and reproduction**
+```bash
+pip install -r requirements.txt -r requirements-research.txt
+pip install -r requirements-reporting.txt      # only for the local / hf_api LLM providers
+for nb in notebooks/0[1-6]_*.ipynb; do
+  jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=5400 "$nb"
+done
+pytest tests/                                  # 58 tests: runtime, schema, RAG, report validator, app panel, cascade regression
+```
+Run them in order 01 → 06. Notebook 02 needs the trained checkpoints. Notebook 05 loads the cached
+Qwen2.5-3B (set `RUN_LOCAL_LLM = False` to skip). Configuration lives in `config.yaml → research`.
+
+**In the app**, once the box and mask are approved, a *Quantitative analysis (research)* panel:
+- extracts features from the approved mask at native resolution and shows QC warnings;
+- saves a validated record to `results/radiomics/app/`;
+- runs the notebook-04 classifier if its artifact matches the extraction settings;
+- retrieves cited references;
+- on request, generates the grounded report (provider: `research.reports.llm_backend`, default the offline `stub`).
+
+If a package, artifact or index is missing, the panel says so and the rest of the app is unchanged.
+The Stage 6 report's rule-based BI-RADS proposal is now hidden by default
+(`reporting.show_rule_category: false`, per-case toggle). Its lexicon descriptors are labelled heuristic estimates.
+
+**Key limitations**
+- Labels are benign/malignant folder labels only, with no patient ids. The near-duplicate audit finds frames shared across
+  splits and across labels; see notebook 01.
+- Shape features are in **pixels**, because BUSI has no physical calibration.
+- On real-inference masks the radiomics model is not better or worse than ResNet50 within the test CIs. On
+  ground-truth masks both look near-perfect, which reflects annotation shape as much as biology. See notebook 04.
+- Probabilities are calibrated to BUSI validation prevalence and are **not** mapped to BI-RADS 4A/4B/4C/5.
+- Retrieval evidence is the ACR quick-reference card, PyRadiomics docs and project notes. The full BI-RADS
+  Atlas and peer-reviewed literature are not in the repository.
 
 ## Notes
 

@@ -1,0 +1,28 @@
+# Optional: BI-RADS-aware research workflow (bus_research/ runtime + notebooks/01-06).
+# Install on top of requirements.txt:  pip install -r requirements-research.txt
+# The app runs without these; its "Quantitative analysis (research)" panel then
+# shows which packages are missing.
+#
+# PyRadiomics: the PyPI 3.1.0 sdist does not build on Python 3.12 (its bundled
+# versioneer uses configparser.SafeConfigParser, removed in 3.12) and has no
+# 3.12 arm64/x86_64 wheel, so this pins the upstream AIM-Harvard commit tagged
+# v3.1.1a3, verified to build and run against numpy 2.5.0.
+pyradiomics @ git+https://github.com/AIM-Harvard/pyradiomics@67d1f268c67c2caffdbe043362f3f7333472af0f
+SimpleITK==2.5.6
+PyWavelets==1.10.0
+jsonschema==4.26.0
+joblib==1.5.3
+scikit-learn==1.9.0
+pydantic==2.13.4
+pypdf==6.1.1
+
+# Notebook execution / evaluation (not needed by app.py)
+pandas==3.0.3
+matplotlib==3.11.0
+nbformat==5.10.4
+nbconvert==7.17.1
+ipykernel==7.3.0
+pytest==9.1.1
+
+# Optional: hybrid BM25 + embedding retrieval (research.rag.embedding_model_id) and the
+# local/hf_api LLM providers come from requirements-reporting.txt.
