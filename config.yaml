@@ -86,6 +86,20 @@ unet:
   checkpoint_dir: checkpoints/unet
   checkpoint_name: best_unet.pth
 
+classification:
+  # Primary research classifier for this laptop. Comparisons run one at a time.
+  primary: efficientnet_b0
+  comparisons: [densenet121, mobilenet_v3_small, resnet18]
+  image_size: 224
+  batch_size: 8
+  epochs: 6
+  freeze_epochs: 1
+  patience: 2
+  lr: 0.001
+  fine_tune_lr: 0.0001
+  weight_decay: 0.0001
+  hamming_max: 5
+
 resnet:
   pretrained: true
   num_classes: 2
@@ -117,13 +131,12 @@ debug:
 # runs and the Stage 6 section shows a short notice instead.
 reporting:
   enabled: true
-  backend: local              # local | hf_api | off ("off" = app behaves exactly as before Stage 6)
+  backend: off                # off keeps the app from downloading any language model
   llm:
-    # Qwen2.5-3B-Instruct is under the Qwen RESEARCH license (non-commercial
-    # only). Apache-2.0 alternatives: Qwen/Qwen2.5-1.5B-Instruct (faster, CPU-friendly)
-    # or Qwen/Qwen2.5-7B-Instruct (better, needs GPU locally / good for hf_api).
-    model_id: Qwen/Qwen2.5-3B-Instruct
-    api_model_id: Qwen/Qwen2.5-3B-Instruct   # used when backend = hf_api
+    # No default generator. 27B models are refused in utils/hardware.py.
+    # google/medgemma-1.5-4b-it is 8.60 GB of published weights and is also refused.
+    model_id: null
+    api_model_id: null
     max_new_tokens: 900
     temperature: 0.2
     timeout_s: 120              # hf_api request timeout
@@ -169,13 +182,29 @@ research:
     sources:
       - id: birads-card
         kind: pdf
-        path: "dataset/BUSI_Jpeg/BIRADS Reference Card (1).pdf"
+        path: "dataset/BIRADS Reference Card 1.pdf"
         title: ACR BI-RADS Atlas Fifth Edition — Quick Reference
         citation: "American College of Radiology. ACR BI-RADS Atlas, 5th ed. Quick Reference card (07.15)."
         version: "5th edition (card dated 07.15)"
         url: https://www.acr.org/birads
         evidence_tier: primary_reference
-        license_note: Provided with the project; the full Atlas is NOT available to this system.
+        license_note: >
+          Supplied with the project as dataset/BIRADS Reference Card 1.pdf.
+          An identical copy also exists at dataset/BUSI_Jpeg/BIRADS Reference Card (1).pdf
+          and is not indexed a second time. The full Atlas is not in this system.
+      - id: lee-2017-us-birads
+        kind: pdf
+        path: "dataset/usg-16034 (1).pdf"
+        title: Practical and illustrated summary of updated BI-RADS for ultrasonography
+        citation: "Lee J. Practical and illustrated summary of updated BI-RADS for ultrasonography. Ultrasonography. 2017;36(1):71-81. doi:10.14366/usg.16034"
+        version: "Ultrasonography 2017;36(1):71-81"
+        url: https://doi.org/10.14366/usg.16034
+        printed_page_offset: 70
+        evidence_tier: primary_reference
+        license_note: >
+          Open access, CC BY-NC 3.0 (Korean Society of Ultrasound in Medicine, 2017).
+          Added because it is the second reference supplied with this project.
+          It summarizes the fifth-edition ultrasound lexicon; it does not replace the Atlas.
       - id: pyradiomics-docs
         kind: python_docstrings
         modules: [radiomics.shape2D, radiomics.firstorder, radiomics.glcm, radiomics.glrlm, radiomics.glszm,

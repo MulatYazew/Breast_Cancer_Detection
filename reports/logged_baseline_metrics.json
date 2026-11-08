@@ -1,0 +1,58 @@
+{
+  "source": "Parsed from logs/yolo_evaluate.log, logs/unet_evaluate.log, logs/resnet_evaluate.log, and logs/cascade_evaluate.log. Not recomputed in the 2026-11-08 session.",
+  "evaluated_at_log_timestamps": {
+    "yolo": "2026-10-07 12:52:59",
+    "unet": "2026-10-07 13:20:39",
+    "resnet": "2026-10-07 13:44:21",
+    "cascade": "2026-10-07 13:44:30"
+  },
+  "split": "image-level 70/15/15, seed 42, byte-identical images grouped. Not patient-level. 63 near-duplicate pairs cross this split (reports/dataset_audit.json).",
+  "yolo_test": {
+    "precision": 0.8838616700894374,
+    "recall": 0.77,
+    "f1": 0.8230113281257633,
+    "map50": 0.7337213557065839,
+    "map50_95": 0.5448232575078953
+  },
+  "unet_test": {
+    "dice": 0.9362252479559379,
+    "iou": 0.8822675563019391,
+    "precision": 0.9272990417655955,
+    "recall": 0.9485378711298721,
+    "specificity": 0.917760072117874,
+    "hd95_px": null,
+    "assd_px": null,
+    "note": "HD95 and ASSD were not computed on this test run. The functions exist in evaluation/surface_distance.py."
+  },
+  "resnet_test_masked_roi": {
+    "accuracy": 0.93,
+    "precision": 0.9615384615384616,
+    "recall_malignant": 0.8064516129032258,
+    "f1": 0.8771929824561403,
+    "cohen_kappa": 0.8287671232876712,
+    "mcc": 0.8350365397224944,
+    "roc_auc": 0.9836372136512389,
+    "pr_auc": 0.9683242986696078,
+    "input": "roi_masked, 3-channel, ground-truth boxes and masks at evaluation of the isolated stage"
+  },
+  "cascade_test": {
+    "accuracy": 0.8295454545454546,
+    "precision": 0.6875,
+    "recall": 0.8148148148148148,
+    "f1": 0.7457627118644068,
+    "cohen_kappa": 0.6189376443418014,
+    "mcc": 0.6239919444536091,
+    "roc_auc": 0.8919247115968427,
+    "pr_auc": 0.7523922241347474,
+    "num_detection_failures": 9,
+    "mean_detection_iou": 0.6696470124503907,
+    "mean_segmentation_dice": 0.8068782813281391
+  },
+  "yolo_best_validation_epoch_from_results_csv": {
+    "epoch": 86,
+    "precision": 0.8891,
+    "recall": 0.81731,
+    "map50": 0.90705,
+    "map50_95": 0.597
+  }
+}

@@ -1,152 +1,246 @@
-# Breast Cancer CAD System
+# Breast ultrasound research system
 
-A cascaded computer-aided diagnosis pipeline for breast ultrasound (BUSI dataset):
+Research use only — not validated for autonomous clinical diagnosis or patient management.
 
+A cascaded research pipeline for breast ultrasound: YOLO26n detection, U-Net segmentation, and ResNet50 benign/malignant classification, with physician approval before a structured report. BI-RADS wording comes from the ACR fifth-edition quick reference and from Lee 2017. The BUSI copy in this repository has no BI-RADS labels, so the system does not predict a BI-RADS category.
+
+## Overview
+
+The images are a local BUSI JPEG set: 647 RGB PNGs, 437 benign and 210 malignant, with 665 lesion masks. There is no patient identifier and no descriptor table. Details are in [docs/dataset.md](docs/dataset.md) and [reports/dataset_audit.md](reports/dataset_audit.md).
+
+The cascade checkpoints were trained earlier. Their test logs from 2026-10-07 are stored in [reports/logged_baseline_metrics.json](reports/logged_baseline_metrics.json). Those numbers are image-level. 63 near-duplicate pairs cross that frozen split, so those figures are not a patient-level performance claim.
+
+The current image-classification experiment is separate. It trains EfficientNet-B0 first, then DenseNet121, MobileNetV3-Small, and ResNet18 one at a time, on a near-duplicate-aware split. The run on 2026-11-08 selected DenseNet121 by validation ROC-AUC. Test labels were not used for that choice. See [reports/classification_evaluation.md](reports/classification_evaluation.md).
+
+## Motivation
+
+Breast ultrasound reporting uses a fixed lexicon. A detector, a segmenter, and a benign/malignant classifier answer different questions from a BI-RADS assessment. This repository keeps those questions apart and leaves the assessment to a qualified reviewer.
+
+## Objectives
+
+- Detect a lesion, segment it, and classify the masked ROI as benign or malignant.
+- Show each output for review before the next stage uses it.
+- Quote BI-RADS terms from the supplied documents, with page citations.
+- Leave missing descriptors and the assessment null until a person enters them.
+- Stay reproducible from a notebook, a CLI, Streamlit, or a local API.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  img[Ultrasound frame] --> det[YOLO26n]
+  det --> box[Review box]
+  box --> seg[U-Net]
+  seg --> mask[Review mask]
+  mask --> cls[ResNet50]
+  cls --> lab[Review class]
+  lab --> rep[Structured report]
+  pdf[ACR card and Lee 2017] --> rag[BM25 retrieval]
+  rag --> rep
 ```
-Raw image + mask -> Preprocessing -> YOLO26n (detection) -> crop
-                  -> U-Net (segmentation) -> masked ROI
-                  -> ResNet50 (classification) -> benign/malignant + confidence
-```
 
-Plus a Streamlit app (Stage 5) for interactive, physician-reviewed inference with
-accept/reject controls at every stage.
+More detail: [docs/architecture.md](docs/architecture.md).
 
-## Project layout
+## Workflow
 
-```
-configs/            YAML overrides merged on top of config.yaml (quick-run smoke test,
-                     U-Net encoder/architecture variants)
-dataset/             manifest building, stratified split, per-lesion manifests, torch
-                     Dataset classes; dataset/BUSI_Jpeg/ holds the raw images+masks (git-ignored)
-preprocessing/        validation, normalization, augmentation, mask->YOLO-box conversion
-                     (mask_to_yolo.py), ROI cropping (roi_utils.py), Stage 1 orchestration
-yolo/                 YOLO26n model, dataset builder, train/evaluate/predict (Stage 2)
-unet/                 U-Net (ResNet34/EfficientNet/Attention-gated/U-Net++), losses,
-                     dataset, train/evaluate (Stage 3)
-resnet/               ResNet50 model, dataset, train/evaluate, Grad-CAM (Stage 4)
-inference/            the cascaded YOLO->U-Net->ResNet50 pipeline + visualization —
-                     imported by both inference.py and app.py
-evaluation/           metrics shared across stages + end-to-end cascade evaluation
-visualization/        shared plotting primitives (overlays, curves, confusion matrices)
-utils/                config loader, seeding/device, logging
-notebooks/Breast_CAD_Master.ipynb   consolidated notebook: all stages (Part 1) + BI-RADS-aware research workflow (Part 2, see below)
-bus_research/         inference-time runtime for that workflow (radiomics, feature store, RAG, classifier, report)
-reporting/            Stage 6 structured report (heuristic lexicon + rule proposal, gated in the app)
-tests/                pytest suite (synthetic fixtures + cascade regression)
-app.py, assets/   Stage 5 clinician-in-the-loop demo (Streamlit; entry point for Hugging Face Spaces)
-train.py / evaluate.py / inference.py   root CLI entry points
-config.yaml            single source of truth for paths + hyperparameters
-checkpoints/, logs/, results/   generated artifacts (git-ignored, regenerated by running the pipeline)
-```
+1. Check image quality.
+2. Detect. The reviewer accepts, rejects, edits, or marks the box uncertain.
+3. Segment the approved ROI. The reviewer accepts, edits, or rejects the mask.
+4. Classify the approved masked ROI. The reviewer accepts, corrects, or marks it uncertain.
+5. Descriptors stay empty. Geometry from the mask is auxiliary and is not a lexicon term.
+6. Only the reviewer enters BI-RADS 0–6.
+7. The reviewer approves the report. The export keeps the audit log.
 
-## Setup
+A rejected stage does not feed the next one (`bus_research/review_workflow.py`).
+
+## Detection, segmentation, classification
+
+| Stage | Code | Checkpoint |
+| --- | --- | --- |
+| YOLO26n, class `tumor` | `yolo/` | `checkpoints/yolo/busi_tumor/weights/best.pt` |
+| U-Net, ResNet34 encoder, Dice+BCE | `unet/` | `checkpoints/unet/best_unet.pth` |
+| ResNet50, masked ROI | `resnet/` | `checkpoints/resnet/best_resnet.pth` |
+
+Logged test metrics, 2026-10-07, not recomputed later:
+
+| Stage | Result |
+| --- | --- |
+| YOLO26n | Precision 0.884, recall 0.770, F1 0.823, mAP@0.50 0.734, mAP@0.50:0.95 0.545 |
+| U-Net | Dice 0.936, IoU 0.882, precision 0.927, recall 0.949, specificity 0.918 |
+| ResNet50, isolated, ground-truth ROI | Accuracy 0.93, malignant recall 0.806, ROC-AUC 0.984, PR-AUC 0.968 |
+| Full cascade | Accuracy 0.830, F1 0.746, ROC-AUC 0.892, 9 missed detections, mean Dice 0.807 |
+
+HD95 and ASSD were not part of that run. `evaluation/surface_distance.py` implements both in pixels.
+
+`resnet/input_modes.py` defines four inputs: full frame, ROI, masked ROI, and ROI plus a mask channel. Only masked ROI has a cascade checkpoint. The October ResNet50 weights were not replaced.
+
+The folder name is the classification label. It is not a BI-RADS category. See [docs/model_card.md](docs/model_card.md).
+
+### Full-image classifiers, 2026-11-08
+
+`classification/` trains on the whole letterboxed frame, not the masked ROI. Settings in `config.yaml`: 224 px, batch 8, at most 6 epochs, 1 frozen epoch, patience 2, class-weighted cross-entropy, seed 42. Split sizes: train 448 (304 benign / 144 malignant), validation 97 (68 / 29), test 91 (59 / 32). Five groups that mix both folder labels were held out. Near-duplicate pairs crossing the new splits: 0. There is still no patient identifier.
+
+Validation chose the model. Test was scored afterwards.
+
+| Model | Validation ROC-AUC | Validation malignant sensitivity | Epochs | Peak RSS |
+| --- | --- | --- | --- | --- |
+| EfficientNet-B0 | 0.948 | 0.828 | 5 | 1.05 GiB |
+| DenseNet121 (selected) | 0.973 | 0.862 | 6 | 1.28 GiB |
+| MobileNetV3-Small | 0.914 | 1.000 | 6 | 1.56 GiB |
+| ResNet18 | 0.944 | 0.931 | 6 | 1.65 GiB |
+
+DenseNet121 on the untouched test split, threshold 0.65 chosen on validation: malignant sensitivity 0.781, benign specificity 0.983, malignant precision 0.962, malignant F1 0.862, macro-F1 0.899, ROC-AUC 0.936, PR-AUC 0.919, Brier 0.086. Confusion matrix, rows true benign then malignant: [[58, 1], [7, 25]]. These are folder-label results on 91 images. They are not a clinical diagnosis.
+
+EfficientNet-B0 remained the starting model. Its test sensitivity was 0.844, higher than the selected model's, but the selection rule did not look at the test set. Checkpoints are under `checkpoints/classification/`. The selected copy is `checkpoints/classification/selected/best.pt`.
+
+## BI-RADS descriptors and assessment
+
+The lexicon transcribed from the two PDFs is in [docs/birads_lexicon.md](docs/birads_lexicon.md).
+
+Lee 2017, printed pages 79–80, quotes category 3 as >0% to ≤2%, 4A as >2% to ≤10%, 4B as >10% to ≤50%, 4C as >50% to <95%, and category 5 as ≥95%. Those sentences are reference text. A softmax probability is not passed through them.
+
+Orientation is the long axis relative to the skin. A round mass is neither parallel nor not parallel. The geometry helper does not invent an orientation.
+
+There is no descriptor model and no assessment model.
+
+## Retrieval
+
+Sources in `config.yaml`:
+
+1. ACR quick reference, `dataset/BIRADS Reference Card 1.pdf` (primary).
+2. Lee 2017, `dataset/usg-16034 (1).pdf` (primary, CC BY-NC). PDF page n is printed page n+70.
+3. PyRadiomics docstrings and the project's own notes (secondary, labeled as such).
+
+Chunking keeps the page and a section label. Ranking is BM25. On 10 questions written from phrases in those PDFs, measured 2026-11-08: recall@5 1.00, MRR 0.608, nDCG@5 0.706, precision@5 0.28. Precision is low because several of the five returned chunks are only related, not the defining sentence. This is a phrase test, not a radiologist relevance set. Numbers: `reports/rag_retrieval.json`.
+
+## Language model
+
+Reporting is off. `config.yaml` sets `reporting.llm.backend` to `off` and both model ids to null, so the app and the notebook do not download a language model.
+
+`google/medgemma-27b-text-it` is refused on this machine. A 27B checkpoint does not fit 24 GB unified memory. `google/medgemma-1.5-4b-it` is also refused without download: the published shards are 4.96 GB and 3.64 GB, 8.60 GB together, above the 8 GB optional-checkpoint cap. The measured peak process budget is 18 GiB. See `utils/hardware.py` and [HARDWARE_AUDIT.md](HARDWARE_AUDIT.md).
+
+The structured report builder does not call a language model. It copies approved fields and leaves the rest null.
+
+## Physician review
+
+Streamlit (`app.py`) reviews the box, mask, class, and an optional older report panel. The API (`api/main.py`) enforces the seven-stage order and requires `REVIEWER_TOKEN`.
+
+Safety notes: [docs/clinical_safety.md](docs/clinical_safety.md).
+
+## Installation
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+pip install -r requirements-research.txt
+pip install -r requirements-reporting.txt   # local LLM and embeddings
+pip install -r requirements-api.txt         # FastAPI
+cp .env.example .env
 ```
 
-## Running
+Hardware used for the 2026-11-08 notebook run: Apple Silicon (arm64), 10 CPU threads, 24.00 GiB RAM, about 169 GiB free disk, PyTorch 2.12.1, MPS available, CUDA not available. Classifier training used MPS, batch size 8, and image size 224. Peak training RSS was 1.65 GiB. Do not load MedGemma 27B or MedGemma 1.5 4B here.
 
-**Stage 1 (preprocessing) — safe to run any time, trains nothing:**
+Hugging Face: a token is required only for gated models. This project does not download MedGemma.
+
+## Configuration
+
+`config.yaml` is the default. Override files in `configs/` are deep-merged. Paths, thresholds, batch size, and `device` (`null` for auto, or `cpu` / `mps` / `cuda`) live there.
+
+## Notebook
+
+The only project notebook is `notebooks/Breast_Ultrasound_AI_End_to_End.ipynb`. It is the entry point for YOLO26n detection, U-Net segmentation, ResNet50 classification, BI-RADS retrieval, and a local report draft.
+
+Open it from the repository root:
+
+```bash
+source venv/bin/activate
+jupyter lab notebooks/Breast_Ultrasound_AI_End_to_End.ipynb
+```
+
+Use Restart Kernel and Run All. `TRAIN_MODE` is false, so Run All loads the saved checkpoints and does not fine-tune. Set `IMAGE_PATH` to choose a different ultrasound PNG. Set `TRAIN_MODE = True` only when you intend to train. An approved report is written only after the review stages are approved; the default run saves `results/notebook_end_to_end/draft_report.json` and withholds the approved export.
+
+The local generator is TinyLlama 1.1B, already stored on this machine. It is not a medical foundation model. MedGemma 27B and MedGemma 1.5 4B are refused and are not downloaded. If the language-model text is not valid report JSON, the notebook says so and does not present that text as the report.
+
+## Training and inference
+
 ```bash
 python train.py preprocess
-```
-Validates every image/mask pair (including a content-duplicate-aware check that keeps
-byte-identical images in the same split — see `preprocessing/validation.py`), builds a
-stratified 70/15/15 split, derives per-lesion YOLO boxes from the masks, and writes a
-report + sanity-check figures to `results/preprocessing/`.
-
-**Stages 2-4 (training) — run manually, one stage at a time:**
-```bash
-python train.py yolo      # Stage 2: YOLO26n detection
-python train.py unet      # Stage 3: U-Net segmentation
-python train.py resnet    # Stage 4: ResNet50 classification
-python train.py all       # Stage 1 -> 2 -> 3 -> 4, sequentially
-```
-Add `--overrides configs/quick_run.yaml` to smoke-test on a tiny subset for 1-2 epochs
-before committing to a full run. Add `--resume` to continue an interrupted run.
-
-To compare U-Net variants, pass the relevant override, e.g.
-`python train.py unet --overrides configs/unet_attention_resnet34.yaml`.
-
-**Evaluation (given already-trained checkpoints):**
-```bash
+python train.py yolo
+python train.py unet
+python train.py resnet
 python evaluate.py yolo --weights checkpoints/yolo/busi_tumor/weights/best.pt
 python evaluate.py unet --checkpoint checkpoints/unet/best_unet.pth
 python evaluate.py resnet --checkpoint checkpoints/resnet/best_resnet.pth
-python evaluate.py cascade   # full Stage 2->3->4 pipeline, real predictions chained
-```
-
-**Batch/script inference:**
-```bash
+python evaluate.py cascade
 python inference.py --input path/to/image.png --output results/inference/
 ```
 
-**Interactive clinician-in-the-loop demo:**
+`python -m dataset.inspect` rewrites `reports/dataset_audit.md`.
+
+## API and Streamlit
+
+```bash
+export REVIEWER_TOKEN=local-research-token
+uvicorn api.main:app --reload
+```
+
+Open `http://127.0.0.1:8000/docs`. Review routes send header `x-reviewer-token`.
+
 ```bash
 streamlit run app.py
 ```
 
-**Notebook (recommended for exploration/thesis writeup):**
-Open `notebooks/Breast_CAD_Master.ipynb`. Every training cell is clearly marked and
-meant to be run manually, not via "Run All".
+The API keeps studies in memory. Restarting the process drops them. Do not send identified clinical images.
 
-## BI-RADS-aware quantitative research workflow (master notebook, Part 2)
+## Example report shape
 
-> Research model output — not a clinical diagnosis. This dataset has **no BI-RADS labels**, so the
-> workflow produces **no BI-RADS category**. It reports "BI-RADS assessment unavailable" instead.
+Values below are the empty state, not a case result.
 
-The research workflow lives in six sections (01–06) in Part 2 of `notebooks/Breast_CAD_Master.ipynb`. The functions both the
-notebooks and the app need at inference time are in a thin runtime package, `bus_research/`.
-Every model and index the app uses is a saved notebook artifact; the app never trains anything.
-
-| section | does | writes |
-|---|---|---|
-| `01_dataset_audit_and_birads_labels` | labels, masks, geometry, split coverage, exact + near-duplicate leakage, BI-RADS label search and gate | `results/audit/dataset_audit.json` |
-| `02_unet_segmentation_and_radiomics` | runs YOLO26n/U-Net, maps masks to native resolution, mask QC, PyRadiomics (shape2D, firstorder, GLCM, GLRLM, GLSZM, GLDM, NGTDM), predicted-vs-GT feature agreement | `results/radiomics/records/*.json`, `manifest.json` |
-| `03_json_feature_store_and_rag` | schema validation, determinism check, authorized-reference ingestion, BM25 index with chunk citations, label-leakage guard | `results/radiomics/schema/`, `results/rag/index/` |
-| `04_classifier_training_and_evaluation` | grouped-CV radiomics baselines (LR / RF / GBM) vs ResNet50, Platt calibration, bootstrap CIs, BI-RADS training interface (blocked) | `results/models/radiomics_classifier/` |
-| `05_llm_report_generation_and_rag` | facts-first JSON report, validator (no BI-RADS claims, directives, invented numbers/descriptors, unknown citations), abstention, local Qwen run | `results/reports/research/` |
-| `06_end_to_end_ultrasound_demo` | one image through the whole chain, with graceful handling of every missing component | record + report |
-
-**Setup and reproduction**
-```bash
-pip install -r requirements.txt -r requirements-research.txt
-pip install -r requirements-reporting.txt      # only for the local / hf_api LLM providers
-pytest tests/                                  # 58 tests: runtime, schema, RAG, report validator, app panel, cascade regression
+```json
+{
+  "study_id": "",
+  "disclaimer": "Research use only — not validated for autonomous clinical diagnosis or patient management.",
+  "detection": {"lesion_detected": null, "bounding_box": null, "confidence": null, "physician_review_status": "pending"},
+  "segmentation": {"mask_reference": null, "confidence": null, "physician_review_status": "pending"},
+  "classification": {"predicted_class": null, "probability": null, "physician_review_status": "pending"},
+  "birads_descriptors": {"shape": null, "orientation": null, "margin": [], "echo_pattern": null},
+  "birads_assessment": {"model_suggestion": null, "physician_final_assessment": null, "status": "pending"},
+  "workflow": {"physician_approved": false, "audit_log": []}
+}
 ```
-Run the Part 2 sections by hand, in order 01 → 06, not with "Run All" (the notebook also holds the training cells). Section 02 needs the trained checkpoints. Section 05 loads the cached
-Qwen2.5-3B (set `RUN_LOCAL_LLM = False` to skip). Configuration lives in `config.yaml → research`.
 
-**In the app**, once the box and mask are approved, a *Quantitative analysis (research)* panel:
-- extracts features from the approved mask at native resolution and shows QC warnings;
-- saves a validated record to `results/radiomics/app/`;
-- runs the notebook-04 classifier if its artifact matches the extraction settings;
-- retrieves cited references;
-- on request, generates the grounded report (provider: `research.reports.llm_backend`, default the offline `stub`).
+## Tests
 
-If a package, artifact or index is missing, the panel says so and the rest of the app is unchanged.
-The Stage 6 report's rule-based BI-RADS proposal is now hidden by default
-(`reporting.show_rule_category: false`, per-case toggle). Its lexicon descriptors are labelled heuristic estimates.
+```bash
+pytest tests/
+```
 
-**Key limitations**
-- Labels are benign/malignant folder labels only, with no patient ids. The near-duplicate audit finds frames shared across
-  splits and across labels; see notebook 01.
-- Shape features are in **pixels**, because BUSI has no physical calibration.
-- On real-inference masks the radiomics model is not better or worse than ResNet50 within the test CIs. On
-  ground-truth masks both look near-perfect, which reflects annotation shape as much as biology. See notebook 04.
-- Probabilities are calibrated to BUSI validation prevalence and are **not** mapped to BI-RADS 4A/4B/4C/5.
-- Retrieval evidence is the ACR quick-reference card, PyRadiomics docs and project notes. The full BI-RADS
-  Atlas and peer-reviewed literature are not in the repository.
+`pytest tests/` covers the review gate, a fake-pipeline API study, surface distance, backbone shapes, and retrieval against the two PDFs. It does not retrain the classifiers.
 
-## Notes
+Two cascade regression tests currently fail. On CPU, the saved YOLO boxes and predicted class still match `tests/fixtures/pipeline_regression.json`, but the malignant probability and the U-Net mask area differ from that fixture. The same mismatch happens with the original `config.yaml`. The October cascade weights were not changed, and the fixture was not rewritten.
 
-- No `normal` class in this copy of BUSI — only `benign` and `malignant`.
-- Some images have more than one lesion (multiple mask files); both YOLO's per-image
-  multi-box labels and U-Net/ResNet50's per-lesion training samples handle this natively
-  (see `dataset/manifest.py`, `dataset/lesion_manifest.py`).
-- U-Net and ResNet50 train independently using ground-truth lesion masks/boxes; the
-  chained `inference/` pipeline is what feeds each stage's real predicted output to the
-  next at serving time.
+## Limitations
+
+- No patient identifier, no external test set, and no reader study. The new split blocks exact and near-duplicate leakage. It cannot block patient leakage.
+- Near-duplicate frames still cross the older split used by the October cascade logs.
+- The selected DenseNet121 test set has 32 malignant images. Seven of those were missed at the validation threshold. That is a research count, not a clinical sensitivity.
+- Descriptors and BI-RADS categories are not predicted.
+- Posterior features, echogenicity, and calcifications need the image and, for calcifications, mammographic correlation. A mask measurement is not those findings.
+- The language-model report path in the older Stage 6 panel can still draft text when a reviewer asks for it. The new structured report does not.
+
+## References
+
+- Al-Dhabyani W, Gomaa M, Khaled H, Fahmy A. Dataset of breast ultrasound images. Data in Brief. 2020;28:104863. The folder labels in this copy are used as supplied. The paper's pathology process is not re-verified from files in this repository.
+- American College of Radiology. ACR BI-RADS Atlas, 5th ed. Quick reference card, 07.15. https://www.acr.org/birads
+- Lee J. Practical and illustrated summary of updated BI-RADS for ultrasonography. Ultrasonography. 2017;36(1):71-81. https://doi.org/10.14366/usg.16034
+- van Griethuysen JJM, et al. Computational radiomics system to decode the radiographic phenotype. Cancer Research. 2017;77(21):e104-e107.
+
+## Further work
+
+- Expert descriptor and assessment labels, with categories 0 and 6 held out of any ordinal model.
+- HD95 and ASSD on the current U-Net test predictions.
+- Confidence intervals on the 91-image test split.
+- A machine with a larger memory budget before any MedGemma checkpoint is considered. This laptop is outside that budget.
+
+Audit narrative: [PROJECT_AUDIT.md](PROJECT_AUDIT.md). Session record: [ENGINEERING_REPORT.md](ENGINEERING_REPORT.md).

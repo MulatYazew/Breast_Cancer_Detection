@@ -1,0 +1,391 @@
+{
+  "k": 5,
+  "n_questions": 10,
+  "precision_at_k": 0.28,
+  "recall_at_k": 1.0,
+  "mrr": 0.6083,
+  "ndcg_at_k": 0.7057,
+  "questions": [
+    {
+      "id": "shape",
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_citations": [
+        {
+          "chunk_id": "birads-card:p1:1",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p3:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 3,
+          "section": "printed p. 73; tissue composition"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p5:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 5,
+          "section": "printed p. 75; mass margin"
+        },
+        {
+          "chunk_id": "birads-card:p1:0",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p3:3",
+          "source_id": "lee-2017-us-birads",
+          "page": 3,
+          "section": "printed p. 73; tissue composition"
+        }
+      ]
+    },
+    {
+      "id": "orientation",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p6:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:5",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:6",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "birads-card:p1:2",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        }
+      ]
+    },
+    {
+      "id": "margin",
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.25,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p5:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 5,
+          "section": "printed p. 75; mass margin"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p5:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 5,
+          "section": "printed p. 75; mass margin"
+        },
+        {
+          "chunk_id": "birads-card:p1:2",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "birads-card:p1:1",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        }
+      ]
+    },
+    {
+      "id": "echo",
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.5,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p6:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "birads-card:p1:2",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "birads-card:p1:1",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p7:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 7,
+          "section": "printed p. 77"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p8:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 8,
+          "section": "printed p. 78; posterior features"
+        }
+      ]
+    },
+    {
+      "id": "posterior",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.25,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p8:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 8,
+          "section": "printed p. 78; posterior features"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p8:3",
+          "source_id": "lee-2017-us-birads",
+          "page": 8,
+          "section": "printed p. 78; posterior features"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "birads-card:p1:2",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:3",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        }
+      ]
+    },
+    {
+      "id": "calcifications",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.3333,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p6:4",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:3",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "birads-card:p1:2",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:5",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p10:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 10,
+          "section": "printed p. 80; assessment likelihood ranges"
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.5,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p8:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 8,
+          "section": "printed p. 78; posterior features"
+        },
+        {
+          "chunk_id": "birads-card:p1:2",
+          "source_id": "birads-card",
+          "page": 1,
+          "section": "ultrasound lexicon quick reference"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p6:3",
+          "source_id": "lee-2017-us-birads",
+          "page": 6,
+          "section": "printed p. 76; mass orientation"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p5:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 5,
+          "section": "printed p. 75; mass margin"
+        },
+        {
+          "chunk_id": "birads-card:p2:0",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        }
+      ]
+    },
+    {
+      "id": "category0",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_citations": [
+        {
+          "chunk_id": "birads-card:p2:2",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p10:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 10,
+          "section": "printed p. 80; assessment likelihood ranges"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p9:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 9,
+          "section": "printed p. 79; BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p9:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 9,
+          "section": "printed p. 79; BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "birads-card:p2:3",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        }
+      ]
+    },
+    {
+      "id": "category6",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_citations": [
+        {
+          "chunk_id": "birads-card:p2:3",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "birads-card:p2:2",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p4:2",
+          "source_id": "lee-2017-us-birads",
+          "page": 4,
+          "section": "printed p. 74; BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p9:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 9,
+          "section": "printed p. 79; BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p4:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 4,
+          "section": "printed p. 74; BI-RADS assessment categories"
+        }
+      ]
+    },
+    {
+      "id": "likelihood",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.25,
+      "top_citations": [
+        {
+          "chunk_id": "lee-2017-us-birads:p10:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 10,
+          "section": "printed p. 80; assessment likelihood ranges"
+        },
+        {
+          "chunk_id": "birads-card:p2:2",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "birads-card:p2:3",
+          "source_id": "birads-card",
+          "page": 2,
+          "section": "BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p9:0",
+          "source_id": "lee-2017-us-birads",
+          "page": 9,
+          "section": "printed p. 79; BI-RADS assessment categories"
+        },
+        {
+          "chunk_id": "lee-2017-us-birads:p9:1",
+          "source_id": "lee-2017-us-birads",
+          "page": 9,
+          "section": "printed p. 79; BI-RADS assessment categories"
+        }
+      ]
+    }
+  ],
+  "note": "Relevance is phrase-and-source match against the supplied PDFs. It is not a radiologist-judged relevance set, and it does not measure LLM groundedness."
+}

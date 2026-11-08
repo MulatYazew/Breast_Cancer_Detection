@@ -1,90 +1,50 @@
-# Breast Ultrasound CAD System — Final Report
+# Breast ultrasound CAD — logged results and limits
 
-> Template. Fill in each `[TODO]` after running real training (`python train.py all`)
-> and evaluation (`python evaluate.py ...`) — no results exist yet since training has
-> not been executed.
+The October 2026 training run produced checkpoints. The test numbers below are copied from `logs/*_evaluate.log` (timestamps 2026-10-07). They were not recomputed on 2026-11-08. A machine-readable copy is `reports/logged_baseline_metrics.json`.
 
-## 1. Overview
+The split is image-level. It is not patient-level. The 2026-11-08 audit found 63 near-duplicate pairs that cross this split. Read the metrics with that limit.
 
-A cascaded CAD pipeline for the BUSI breast ultrasound dataset: YOLO26n (tumor detection)
--> U-Net (segmentation) -> ResNet50 (benign/malignant classification), with a Streamlit
-clinician-in-the-loop demo for physician-reviewed inference.
+## Dataset
 
-## 2. Dataset
+- 647 images: 437 benign, 210 malignant. 665 masks.
+- Split sizes: train 452, val 98, test 97.
+- One exact cross-label duplicate: benign (433) and malignant (145), kept in one split.
+- No BI-RADS descriptor or assessment labels.
 
-- Source: BUSI (Breast Ultrasound Images), `dataset/BUSI_Jpeg/{benign,malignant}` + masks.
-- Classes: benign, malignant (no `normal` class in this copy).
-- Total images / lesion instances: [TODO — see `results/preprocessing/report.json`].
-- Split: stratified 70/15/15 (train/val/test), fixed seed, content-duplicate-aware
-  (see `preprocessing/validation.py`'s `duplicate_image_cross_class` check).
-- Data quality notes: [TODO — summarize `results/preprocessing/report.json` validation section].
+## Logged test metrics (2026-10-07)
 
-## 3. Methodology
+### Detection, YOLO26n
 
-### 3.1 Preprocessing & Augmentation
-Mask validation, stratified split, mask -> YOLO bounding-box conversion (connected-component
-analysis, padding, clipping), stage-aware Albumentations pipelines (see
-`preprocessing/augmentation.py` for the full safe/cautious/avoid transform rationale).
-
-### 3.2 Stage 2 — YOLO26n Detection
-Architecture: YOLO26n (Ultralytics). Training config: [TODO — epochs/batch/lr from
-`config.yaml`'s `yolo:` section actually used].
-
-### 3.3 Stage 3 — U-Net Segmentation
-Architecture(s) compared: [TODO — plain U-Net/ResNet34, Attention U-Net/ResNet34,
-U-Net/EfficientNet-B0, U-Net++/ResNet34 — whichever were run]. Loss: Dice + BCE.
-
-### 3.4 Stage 4 — ResNet50 Classification
-ImageNet-pretrained ResNet50, freeze-then-fine-tune schedule on the masked tumor ROI.
-
-## 4. Results
-
-### 4.1 Stage 2 — Detection
 | Metric | Value |
-|---|---|
-| mAP50 | [TODO] |
-| mAP50-95 | [TODO] |
-| Precision | [TODO] |
-| Recall | [TODO] |
-| F1 | [TODO] |
-| Mean IoU | [TODO] |
+| --- | --- |
+| Precision | 0.884 |
+| Recall | 0.770 |
+| F1 | 0.823 |
+| mAP@0.50 | 0.734 |
+| mAP@0.50:0.95 | 0.545 |
 
-### 4.2 Stage 3 — Segmentation
-| Architecture | Dice | IoU | Precision | Recall | Specificity |
-|---|---|---|---|---|---|
-| U-Net (ResNet34) | [TODO] | [TODO] | [TODO] | [TODO] | [TODO] |
-| Attention U-Net (ResNet34) | [TODO] | [TODO] | [TODO] | [TODO] | [TODO] |
-| U-Net (EfficientNet-B0) | [TODO] | [TODO] | [TODO] | [TODO] | [TODO] |
+Best validation epoch in the training CSV was epoch 86 (mAP@0.50 0.907). That is not the test number.
 
-### 4.3 Stage 4 — Classification
-| Metric | Value |
-|---|---|
-| Accuracy | [TODO] |
-| Precision | [TODO] |
-| Recall | [TODO] |
-| F1 | [TODO] |
-| ROC-AUC | [TODO] |
-| PR-AUC | [TODO] |
-| Cohen's kappa | [TODO] |
-| MCC | [TODO] |
+### Segmentation, U-Net ResNet34
 
-### 4.4 End-to-end cascade
-Real YOLO -> U-Net -> ResNet50 chained (not ground-truth-fed), from
-`evaluation/cascade.py`: [TODO — classification metrics + mean detection IoU + mean
-segmentation Dice, quantifying error propagation vs. the isolated per-stage results above].
+| Dice | IoU | Precision | Recall | Specificity |
+| --- | --- | --- | --- | --- |
+| 0.936 | 0.882 | 0.927 | 0.949 | 0.918 |
 
-## 5. Discussion
+HD95 and ASSD were not computed. Other U-Net variants in `configs/` were not the checkpoint that was evaluated.
 
-[TODO — error analysis, failure modes, comparison across U-Net variants, limitations of
-the BUSI dataset size/annotation quality (e.g. the cross-class duplicate image found
-during validation).]
+### Classification, ResNet50 masked ROI
 
-## 6. Conclusion
+| Accuracy | Precision | Malignant recall | F1 | ROC-AUC | PR-AUC |
+| --- | --- | --- | --- | --- | --- |
+| 0.93 | 0.962 | 0.806 | 0.877 | 0.984 | 0.968 |
 
-[TODO]
+### Cascade, predicted box and mask
 
-## Appendix: Reproducibility
+| Accuracy | Precision | Recall | F1 | ROC-AUC | PR-AUC | Missed detections | Mean detection IoU | Mean Dice |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.830 | 0.688 | 0.815 | 0.746 | 0.892 | 0.752 | 9 | 0.670 | 0.807 |
 
-- Seed: `config.yaml`'s `seed` (default 42), applied via `utils.seed.set_seed`.
-- Config used for final results: [TODO — note any `configs/*.yaml` overrides applied].
-- Hardware: [TODO — CPU/CUDA/MPS, approximate training time per stage].
+## What these numbers are not
+
+They are not a BI-RADS result, not a patient-level result, and not an external validation. Descriptor and assessment models were not trained. See `ENGINEERING_REPORT.md`.

@@ -111,6 +111,32 @@ def _read_python_docstrings(modules: list[str]):
                     yield None, f"{cls.__name__}.{name[3:-12]}", inspect.getdoc(fn)
 
 
+def _guess_section(text: str) -> str | None:
+    """Coarse section label from a page's extracted text. Used as retrieval metadata."""
+    low = text.lower()
+    if "echo pattern" in low and "posterior" in low and "tissue" in low:
+        return "ultrasound lexicon quick reference"
+    if "likelihood of cancer for category 3" in low or ("4a" in low and "likelihood" in low):
+        return "assessment likelihood ranges"
+    if "long axis relative to the skin" in low:
+        return "mass orientation"
+    if "assessment categor" in low or "biopsy-proven" in low:
+        return "BI-RADS assessment categories"
+    if "not circumscribed" in low and ("microlobulated" in low or "spiculated" in low):
+        return "mass margin"
+    if "background echotexture" in low or "tissue composition" in low:
+        return "tissue composition"
+    if "posterior acoustic" in low:
+        return "posterior features"
+    if "calcification" in low:
+        return "calcifications"
+    if "simple cyst" in low or "special case" in low:
+        return "special cases"
+    if "irregular" in low and "oval" in low and "shape" in low:
+        return "mass shape"
+    return None
+
+
 def _clean(text: str) -> str:
     text = re.sub(r":math:`([^`]*)`", r"\1", text)
     return " ".join(text.split())
@@ -152,7 +178,13 @@ def ingest_sources(sources: list[dict], repo_root: str | Path, chunk_words: int 
             record["content_sha256"] = _sha256(path)
             units = {"pdf": _read_pdf, "markdown": _read_markdown, "text": _read_text}[kind](path)
         n_before = len(chunks)
+        offset = src.get("printed_page_offset")
         for page, section, text in units:
+            if section is None:
+                section = _guess_section(text)
+            if page is not None and offset is not None:
+                printed = f"printed p. {page + int(offset)}"
+                section = f"{printed}; {section}" if section else printed
             words = _clean(text).split()
             for i, window in enumerate(_windows(words, chunk_words, overlap_words)):
                 loc = f"p{page}" if page is not None else (

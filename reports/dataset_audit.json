@@ -1,0 +1,1416 @@
+{
+  "created_at_utc": "2026-11-08T11:57:32.337851+00:00",
+  "dataset": "BUSI JPEG copy configured in config.yaml",
+  "label_source": {
+    "classification": "directory name (benign or malignant)",
+    "histopathology_table_in_repository": false,
+    "patient_identifiers_available": false,
+    "examination_identifiers_available": false,
+    "note": "Filenames such as 'benign (100)' are dataset indices, not patient or accession numbers. Images from one patient cannot be grouped, so the existing split is image-level. Byte-identical files are kept together; near-duplicates are not."
+  },
+  "n_images": 647,
+  "class_counts": {
+    "benign": 437,
+    "malignant": 210
+  },
+  "class_balance": {
+    "benign_fraction": 0.6754,
+    "malignant_fraction": 0.3246,
+    "malignant_to_benign_ratio": 0.4805
+  },
+  "formats": {
+    ".png": 647
+  },
+  "modes": {
+    "RGB": 647
+  },
+  "channels_observed": [
+    3
+  ],
+  "unreadable_or_corrupted": [],
+  "image_size_px": {
+    "width_min": 190,
+    "width_max": 1048,
+    "height_min": 324,
+    "height_max": 719,
+    "n_unique_sizes": 545
+  },
+  "physical_spacing": null,
+  "bit_depth_note": "PNG mode is recorded per image. This copy is 8-bit (mode L or RGB), not DICOM.",
+  "masks": {
+    "images_without_mask": [],
+    "mask_files_per_image": {
+      "1": 630,
+      "2": 16,
+      "3": 1
+    },
+    "lesion_masks_by_class": {
+      "benign": 454,
+      "malignant": 211
+    },
+    "total_lesion_masks": 665
+  },
+  "exact_duplicate_groups": [
+    [
+      "benign (433)",
+      "malignant (145)"
+    ]
+  ],
+  "near_duplicate_rule": "dHash Hamming distance 1..5 (distance 0 is an exact content duplicate)",
+  "n_near_duplicate_pairs": 128,
+  "n_near_duplicate_cross_split": 63,
+  "n_near_duplicate_cross_label": 5,
+  "near_duplicate_pairs": [
+    {
+      "image_a": "benign (233)",
+      "image_b": "benign (299)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9999,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (116)",
+      "image_b": "malignant (18)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9997,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (131)",
+      "image_b": "malignant (51)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9989,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": true
+    },
+    {
+      "image_a": "benign (276)",
+      "image_b": "benign (287)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9988,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (312)",
+      "image_b": "benign (421)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9988,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (266)",
+      "image_b": "benign (279)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9982,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (400)",
+      "image_b": "benign (412)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9982,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (202)",
+      "image_b": "benign (301)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9981,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (129)",
+      "image_b": "benign (44)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9979,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (234)",
+      "image_b": "benign (261)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9977,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (263)",
+      "image_b": "benign (278)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9975,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (322)",
+      "image_b": "benign (5)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9973,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (292)",
+      "image_b": "benign (293)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9969,
+      "split_a": "test",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (232)",
+      "image_b": "benign (287)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9968,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (274)",
+      "image_b": "benign (290)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9968,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (206)",
+      "image_b": "benign (303)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9967,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (395)",
+      "image_b": "benign (411)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9967,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (118)",
+      "image_b": "malignant (119)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9965,
+      "split_a": "val",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (138)",
+      "image_b": "benign (60)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9962,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (177)",
+      "image_b": "benign (35)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9959,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (225)",
+      "image_b": "benign (293)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9956,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (325)",
+      "image_b": "benign (8)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9946,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (245)",
+      "image_b": "benign (305)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9929,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (241)",
+      "image_b": "benign (279)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9927,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (130)",
+      "image_b": "benign (33)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9917,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (151)",
+      "image_b": "benign (16)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9916,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (15)",
+      "image_b": "benign (332)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9914,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (153)",
+      "image_b": "benign (25)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9912,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (323)",
+      "image_b": "benign (6)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9912,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (199)",
+      "image_b": "benign (248)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9904,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (39)",
+      "image_b": "malignant (42)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9902,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (111)",
+      "image_b": "malignant (15)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9898,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (215)",
+      "image_b": "benign (270)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9893,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (242)",
+      "image_b": "benign (288)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9869,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (205)",
+      "image_b": "benign (262)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9861,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (227)",
+      "image_b": "benign (250)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9854,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (200)",
+      "image_b": "benign (290)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9821,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (326)",
+      "image_b": "benign (9)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9797,
+      "split_a": "test",
+      "split_b": "test",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (244)",
+      "image_b": "benign (251)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9729,
+      "split_a": "test",
+      "split_b": "test",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (11)",
+      "image_b": "benign (328)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9678,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (214)",
+      "image_b": "benign (281)",
+      "dhash_hamming": 1,
+      "pixel_corr_32": 0.9628,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (203)",
+      "image_b": "benign (289)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9996,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (152)",
+      "image_b": "benign (18)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9993,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (203)",
+      "image_b": "benign (273)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9992,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (42)",
+      "image_b": "malignant (51)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9989,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": true
+    },
+    {
+      "image_a": "benign (218)",
+      "image_b": "benign (296)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9987,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (399)",
+      "image_b": "malignant (93)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9987,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": true
+    },
+    {
+      "image_a": "benign (316)",
+      "image_b": "benign (426)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9985,
+      "split_a": "val",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (249)",
+      "image_b": "benign (282)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9983,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (309)",
+      "image_b": "benign (422)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9982,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (13)",
+      "image_b": "benign (330)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9981,
+      "split_a": "val",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (163)",
+      "image_b": "benign (86)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9976,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (321)",
+      "image_b": "benign (4)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9976,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (127)",
+      "image_b": "benign (37)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9971,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (10)",
+      "image_b": "benign (327)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.997,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (17)",
+      "image_b": "benign (425)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9967,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (7)",
+      "image_b": "malignant (9)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9967,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (226)",
+      "image_b": "benign (278)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9965,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (1)",
+      "image_b": "benign (318)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9962,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (209)",
+      "image_b": "benign (275)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9959,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (209)",
+      "image_b": "benign (297)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9957,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (96)",
+      "image_b": "malignant (97)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9956,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (310)",
+      "image_b": "benign (423)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9954,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (324)",
+      "image_b": "benign (7)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9948,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (65)",
+      "image_b": "benign (99)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9932,
+      "split_a": "test",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (222)",
+      "image_b": "benign (267)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.992,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (136)",
+      "image_b": "benign (50)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9914,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (155)",
+      "image_b": "benign (96)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9903,
+      "split_a": "test",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (307)",
+      "image_b": "benign (419)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9897,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (157)",
+      "image_b": "benign (99)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9893,
+      "split_a": "test",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (231)",
+      "image_b": "benign (295)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9889,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (216)",
+      "image_b": "benign (265)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9887,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (241)",
+      "image_b": "benign (266)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9882,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (109)",
+      "image_b": "malignant (13)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9881,
+      "split_a": "test",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (404)",
+      "image_b": "benign (415)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9852,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (207)",
+      "image_b": "benign (256)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.983,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (260)",
+      "image_b": "benign (281)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9822,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (2)",
+      "image_b": "benign (319)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9804,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (333)",
+      "image_b": "malignant (77)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9803,
+      "split_a": "test",
+      "split_b": "test",
+      "cross_split": false,
+      "cross_label": true
+    },
+    {
+      "image_a": "malignant (10)",
+      "image_b": "malignant (112)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9802,
+      "split_a": "test",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (406)",
+      "image_b": "malignant (94)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9773,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": true
+    },
+    {
+      "image_a": "benign (213)",
+      "image_b": "benign (253)",
+      "dhash_hamming": 2,
+      "pixel_corr_32": 0.9303,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (284)",
+      "image_b": "benign (285)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9995,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (226)",
+      "image_b": "benign (263)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9993,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (235)",
+      "image_b": "benign (294)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9991,
+      "split_a": "test",
+      "split_b": "test",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (228)",
+      "image_b": "benign (306)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.999,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (139)",
+      "image_b": "benign (65)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9987,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (139)",
+      "image_b": "benign (157)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9986,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (8)",
+      "image_b": "malignant (9)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9984,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (211)",
+      "image_b": "benign (254)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.998,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (259)",
+      "image_b": "benign (280)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9977,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (255)",
+      "image_b": "benign (277)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9975,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (7)",
+      "image_b": "malignant (8)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9973,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (135)",
+      "image_b": "benign (58)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9971,
+      "split_a": "val",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (131)",
+      "image_b": "benign (42)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9964,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (123)",
+      "image_b": "malignant (14)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9959,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (128)",
+      "image_b": "benign (30)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9958,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (197)",
+      "image_b": "benign (81)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9943,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (134)",
+      "image_b": "benign (52)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9941,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (139)",
+      "image_b": "benign (99)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9937,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (308)",
+      "image_b": "benign (424)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9932,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (236)",
+      "image_b": "benign (247)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.989,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (201)",
+      "image_b": "benign (302)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9882,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (110)",
+      "image_b": "benign (158)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9877,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (108)",
+      "image_b": "benign (94)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9791,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (230)",
+      "image_b": "benign (252)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9768,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (214)",
+      "image_b": "benign (260)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9681,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (114)",
+      "image_b": "malignant (14)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9629,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (221)",
+      "image_b": "benign (246)",
+      "dhash_hamming": 3,
+      "pixel_corr_32": 0.9236,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (4)",
+      "image_b": "malignant (5)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9996,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (204)",
+      "image_b": "benign (249)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9992,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (204)",
+      "image_b": "benign (282)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9969,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (17)",
+      "image_b": "malignant (88)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9966,
+      "split_a": "train",
+      "split_b": "test",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (12)",
+      "image_b": "benign (329)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9957,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (229)",
+      "image_b": "benign (280)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9941,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (219)",
+      "image_b": "benign (272)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9933,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (132)",
+      "image_b": "benign (38)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.993,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (224)",
+      "image_b": "benign (304)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9923,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (223)",
+      "image_b": "benign (257)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9916,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (240)",
+      "image_b": "benign (255)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9906,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (110)",
+      "image_b": "malignant (12)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9852,
+      "split_a": "train",
+      "split_b": "val",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (154)",
+      "image_b": "benign (21)",
+      "dhash_hamming": 4,
+      "pixel_corr_32": 0.9442,
+      "split_a": "val",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (229)",
+      "image_b": "benign (259)",
+      "dhash_hamming": 5,
+      "pixel_corr_32": 0.9979,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (240)",
+      "image_b": "benign (277)",
+      "dhash_hamming": 5,
+      "pixel_corr_32": 0.9933,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (119)",
+      "image_b": "benign (122)",
+      "dhash_hamming": 5,
+      "pixel_corr_32": 0.9889,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (14)",
+      "image_b": "benign (331)",
+      "dhash_hamming": 5,
+      "pixel_corr_32": 0.9789,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "benign (61)",
+      "image_b": "benign (94)",
+      "dhash_hamming": 5,
+      "pixel_corr_32": 0.9737,
+      "split_a": "train",
+      "split_b": "train",
+      "cross_split": false,
+      "cross_label": false
+    },
+    {
+      "image_a": "malignant (27)",
+      "image_b": "malignant (28)",
+      "dhash_hamming": 5,
+      "pixel_corr_32": 0.9675,
+      "split_a": "test",
+      "split_b": "train",
+      "cross_split": true,
+      "cross_label": false
+    }
+  ],
+  "splits": {
+    "train": {
+      "benign": 306,
+      "malignant": 146
+    },
+    "test": {
+      "benign": 66,
+      "malignant": 31
+    },
+    "val": {
+      "benign": 65,
+      "malignant": 33
+    }
+  },
+  "split_policy": "Existing files in dataset/splits are stratified by folder label and group byte-identical images. They are not patient-level. Near-duplicates already cross the frozen split, so published checkpoint metrics are not a clean patient-level estimate. The split was not rebuilt, because rebuilding it would make the saved YOLO, U-Net, and ResNet50 checkpoints incomparable.",
+  "yolo": {
+    "present": true,
+    "splits": {
+      "train": {
+        "n_images": 452,
+        "n_label_files": 452,
+        "images_missing_labels": [],
+        "labels_missing_images": [],
+        "empty_label_files": [],
+        "n_boxes": 461,
+        "class_id_counts": {
+          "0": 461
+        },
+        "n_invalid_boxes": 0,
+        "invalid_box_examples": []
+      },
+      "val": {
+        "n_images": 98,
+        "n_label_files": 98,
+        "images_missing_labels": [],
+        "labels_missing_images": [],
+        "empty_label_files": [],
+        "n_boxes": 104,
+        "class_id_counts": {
+          "0": 104
+        },
+        "n_invalid_boxes": 0,
+        "invalid_box_examples": []
+      },
+      "test": {
+        "n_images": 97,
+        "n_label_files": 97,
+        "images_missing_labels": [],
+        "labels_missing_images": [],
+        "empty_label_files": [],
+        "n_boxes": 100,
+        "class_id_counts": {
+          "0": 100
+        },
+        "n_invalid_boxes": 0,
+        "invalid_box_examples": []
+      }
+    }
+  },
+  "birads": {
+    "descriptor_or_assessment_tables": [],
+    "reference_pdfs": [
+      "dataset/BIRADS Reference Card 1.pdf",
+      "dataset/usg-16034 (1).pdf",
+      "dataset/BUSI_Jpeg/BIRADS Reference Card (1).pdf"
+    ],
+    "radiologist_descriptor_labels_available": false,
+    "radiologist_assessment_labels_available": false,
+    "reason": "No CSV/JSON/TXT annotation table of BI-RADS descriptors or assessment categories was found. The PDFs are terminology references, not image labels. Folder names supply benign/malignant only."
+  },
+  "normal_class_present": false
+}

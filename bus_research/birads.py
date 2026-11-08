@@ -1,8 +1,9 @@
 """BI-RADS (ACR 5th edition) assessment categories, ultrasound descriptor schema, and label gating.
 
 Vocabulary is transcribed from the ACR BI-RADS Atlas 5th Edition Quick
-Reference card shipped with the dataset (``dataset/BUSI_Jpeg/BIRADS Reference
-Card (1).pdf``, ultrasound column + assessment-category table).
+Reference card (``dataset/BIRADS Reference Card 1.pdf``, ultrasound column
+and assessment-category table) and the likelihood ranges quoted by Lee 2017
+(``dataset/usg-16034 (1).pdf``).
 
 Nothing here *derives* a BI-RADS category or descriptor from model output.
 Descriptors are separately annotated (or separately predicted) fields with

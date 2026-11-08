@@ -1,0 +1,94 @@
+{
+  "seed": 42,
+  "hamming_max": 5,
+  "patient_identifiers_available": false,
+  "grouping": "exact file hash plus dHash Hamming <= 5; not a patient id",
+  "n_groups": 523,
+  "n_conflict_groups": 5,
+  "conflict_groups": [
+    {
+      "members": [
+        "benign (131)",
+        "benign (42)",
+        "malignant (51)"
+      ],
+      "labels": [
+        "benign",
+        "malignant"
+      ]
+    },
+    {
+      "members": [
+        "benign (333)",
+        "malignant (77)"
+      ],
+      "labels": [
+        "benign",
+        "malignant"
+      ]
+    },
+    {
+      "members": [
+        "benign (399)",
+        "malignant (93)"
+      ],
+      "labels": [
+        "benign",
+        "malignant"
+      ]
+    },
+    {
+      "members": [
+        "benign (406)",
+        "malignant (94)"
+      ],
+      "labels": [
+        "benign",
+        "malignant"
+      ]
+    },
+    {
+      "members": [
+        "benign (433)",
+        "malignant (145)"
+      ],
+      "labels": [
+        "benign",
+        "malignant"
+      ]
+    }
+  ],
+  "held_out_ids": [
+    "benign (131)",
+    "benign (333)",
+    "benign (399)",
+    "benign (406)",
+    "benign (42)",
+    "benign (433)",
+    "malignant (145)",
+    "malignant (51)",
+    "malignant (77)",
+    "malignant (93)",
+    "malignant (94)"
+  ],
+  "cross_split_near_duplicate_pairs": 0,
+  "split_counts": {
+    "train": {
+      "benign": 304,
+      "malignant": 144
+    },
+    "val": {
+      "benign": 68,
+      "malignant": 29
+    },
+    "test": {
+      "benign": 59,
+      "malignant": 32
+    }
+  },
+  "split_sizes": {
+    "train": 448,
+    "val": 97,
+    "test": 91
+  }
+}

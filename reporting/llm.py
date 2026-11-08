@@ -38,6 +38,9 @@ class LocalLLM:
 
     def __init__(self, model_id: str, device: str | None = None, max_new_tokens: int = 900,
                  temperature: float = 0.2) -> None:
+        from utils.hardware import assert_model_id_allowed
+
+        assert_model_id_allowed(model_id)
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
 

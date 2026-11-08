@@ -21,15 +21,22 @@ def detect_tumor(
     imgsz: int = 640,
     conf_threshold: float = 0.25,
     iou_threshold: float = 0.45,
+    device: str | None = None,
 ) -> list[tuple[Bbox, float]]:
     """Run detection and return every box above ``conf_threshold`` as (bbox, confidence).
 
     Boxes are sorted by confidence, descending, so ``result[0]`` is the top
     detection (the one the Streamlit app pre-selects for physician review).
     """
-    results = model.predict(
-        image, imgsz=imgsz, conf=conf_threshold, iou=iou_threshold, verbose=False
-    )
+    predict_kwargs = {
+        "imgsz": imgsz,
+        "conf": conf_threshold,
+        "iou": iou_threshold,
+        "verbose": False,
+    }
+    if device is not None:
+        predict_kwargs["device"] = device
+    results = model.predict(image, **predict_kwargs)
     boxes = results[0].boxes
     if len(boxes) == 0:
         return []
@@ -50,7 +57,10 @@ def detect_top_box(
     imgsz: int = 640,
     conf_threshold: float = 0.25,
     iou_threshold: float = 0.45,
+    device: str | None = None,
 ) -> tuple[Bbox, float] | None:
     """Convenience wrapper returning only the highest-confidence detection, if any."""
-    detections = detect_tumor(model, image, imgsz, conf_threshold, iou_threshold)
+    detections = detect_tumor(
+        model, image, imgsz, conf_threshold, iou_threshold, device=device
+    )
     return detections[0] if detections else None

@@ -1,0 +1,2242 @@
+[
+  {
+    "image_id": "benign (1)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (1).png"
+  },
+  {
+    "image_id": "benign (100)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (100).png"
+  },
+  {
+    "image_id": "benign (101)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (101).png"
+  },
+  {
+    "image_id": "benign (103)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (103).png"
+  },
+  {
+    "image_id": "benign (104)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (104).png"
+  },
+  {
+    "image_id": "benign (105)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (105).png"
+  },
+  {
+    "image_id": "benign (107)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (107).png"
+  },
+  {
+    "image_id": "benign (108)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (108).png"
+  },
+  {
+    "image_id": "benign (11)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (11).png"
+  },
+  {
+    "image_id": "benign (112)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (112).png"
+  },
+  {
+    "image_id": "benign (113)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (113).png"
+  },
+  {
+    "image_id": "benign (114)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (114).png"
+  },
+  {
+    "image_id": "benign (115)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (115).png"
+  },
+  {
+    "image_id": "benign (116)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (116).png"
+  },
+  {
+    "image_id": "benign (119)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (119).png"
+  },
+  {
+    "image_id": "benign (12)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (12).png"
+  },
+  {
+    "image_id": "benign (120)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (120).png"
+  },
+  {
+    "image_id": "benign (121)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (121).png"
+  },
+  {
+    "image_id": "benign (122)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (122).png"
+  },
+  {
+    "image_id": "benign (123)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (123).png"
+  },
+  {
+    "image_id": "benign (125)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (125).png"
+  },
+  {
+    "image_id": "benign (126)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (126).png"
+  },
+  {
+    "image_id": "benign (127)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (127).png"
+  },
+  {
+    "image_id": "benign (128)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (128).png"
+  },
+  {
+    "image_id": "benign (13)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (13).png"
+  },
+  {
+    "image_id": "benign (132)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (132).png"
+  },
+  {
+    "image_id": "benign (133)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (133).png"
+  },
+  {
+    "image_id": "benign (134)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (134).png"
+  },
+  {
+    "image_id": "benign (135)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (135).png"
+  },
+  {
+    "image_id": "benign (136)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (136).png"
+  },
+  {
+    "image_id": "benign (138)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (138).png"
+  },
+  {
+    "image_id": "benign (139)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (139).png"
+  },
+  {
+    "image_id": "benign (140)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (140).png"
+  },
+  {
+    "image_id": "benign (141)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (141).png"
+  },
+  {
+    "image_id": "benign (142)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (142).png"
+  },
+  {
+    "image_id": "benign (147)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (147).png"
+  },
+  {
+    "image_id": "benign (150)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (150).png"
+  },
+  {
+    "image_id": "benign (151)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (151).png"
+  },
+  {
+    "image_id": "benign (152)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (152).png"
+  },
+  {
+    "image_id": "benign (154)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (154).png"
+  },
+  {
+    "image_id": "benign (155)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (155).png"
+  },
+  {
+    "image_id": "benign (156)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (156).png"
+  },
+  {
+    "image_id": "benign (157)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (157).png"
+  },
+  {
+    "image_id": "benign (16)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (16).png"
+  },
+  {
+    "image_id": "benign (160)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (160).png"
+  },
+  {
+    "image_id": "benign (162)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (162).png"
+  },
+  {
+    "image_id": "benign (163)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (163).png"
+  },
+  {
+    "image_id": "benign (164)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (164).png"
+  },
+  {
+    "image_id": "benign (165)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (165).png"
+  },
+  {
+    "image_id": "benign (166)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (166).png"
+  },
+  {
+    "image_id": "benign (167)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (167).png"
+  },
+  {
+    "image_id": "benign (169)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (169).png"
+  },
+  {
+    "image_id": "benign (17)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (17).png"
+  },
+  {
+    "image_id": "benign (170)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (170).png"
+  },
+  {
+    "image_id": "benign (171)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (171).png"
+  },
+  {
+    "image_id": "benign (172)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (172).png"
+  },
+  {
+    "image_id": "benign (173)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (173).png"
+  },
+  {
+    "image_id": "benign (174)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (174).png"
+  },
+  {
+    "image_id": "benign (175)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (175).png"
+  },
+  {
+    "image_id": "benign (177)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (177).png"
+  },
+  {
+    "image_id": "benign (178)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (178).png"
+  },
+  {
+    "image_id": "benign (179)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (179).png"
+  },
+  {
+    "image_id": "benign (18)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (18).png"
+  },
+  {
+    "image_id": "benign (180)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (180).png"
+  },
+  {
+    "image_id": "benign (181)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (181).png"
+  },
+  {
+    "image_id": "benign (182)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (182).png"
+  },
+  {
+    "image_id": "benign (185)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (185).png"
+  },
+  {
+    "image_id": "benign (186)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (186).png"
+  },
+  {
+    "image_id": "benign (188)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (188).png"
+  },
+  {
+    "image_id": "benign (189)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (189).png"
+  },
+  {
+    "image_id": "benign (19)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (19).png"
+  },
+  {
+    "image_id": "benign (190)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (190).png"
+  },
+  {
+    "image_id": "benign (191)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (191).png"
+  },
+  {
+    "image_id": "benign (192)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (192).png"
+  },
+  {
+    "image_id": "benign (193)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (193).png"
+  },
+  {
+    "image_id": "benign (195)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (195).png"
+  },
+  {
+    "image_id": "benign (196)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (196).png"
+  },
+  {
+    "image_id": "benign (198)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (198).png"
+  },
+  {
+    "image_id": "benign (199)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (199).png"
+  },
+  {
+    "image_id": "benign (200)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (200).png"
+  },
+  {
+    "image_id": "benign (201)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (201).png"
+  },
+  {
+    "image_id": "benign (202)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (202).png"
+  },
+  {
+    "image_id": "benign (203)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (203).png"
+  },
+  {
+    "image_id": "benign (204)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (204).png"
+  },
+  {
+    "image_id": "benign (205)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (205).png"
+  },
+  {
+    "image_id": "benign (206)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (206).png"
+  },
+  {
+    "image_id": "benign (207)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (207).png"
+  },
+  {
+    "image_id": "benign (208)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (208).png"
+  },
+  {
+    "image_id": "benign (209)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (209).png"
+  },
+  {
+    "image_id": "benign (21)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (21).png"
+  },
+  {
+    "image_id": "benign (210)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (210).png"
+  },
+  {
+    "image_id": "benign (211)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (211).png"
+  },
+  {
+    "image_id": "benign (212)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (212).png"
+  },
+  {
+    "image_id": "benign (213)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (213).png"
+  },
+  {
+    "image_id": "benign (216)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (216).png"
+  },
+  {
+    "image_id": "benign (217)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (217).png"
+  },
+  {
+    "image_id": "benign (218)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (218).png"
+  },
+  {
+    "image_id": "benign (219)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (219).png"
+  },
+  {
+    "image_id": "benign (22)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (22).png"
+  },
+  {
+    "image_id": "benign (221)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (221).png"
+  },
+  {
+    "image_id": "benign (223)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (223).png"
+  },
+  {
+    "image_id": "benign (224)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (224).png"
+  },
+  {
+    "image_id": "benign (225)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (225).png"
+  },
+  {
+    "image_id": "benign (228)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (228).png"
+  },
+  {
+    "image_id": "benign (229)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (229).png"
+  },
+  {
+    "image_id": "benign (230)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (230).png"
+  },
+  {
+    "image_id": "benign (231)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (231).png"
+  },
+  {
+    "image_id": "benign (232)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (232).png"
+  },
+  {
+    "image_id": "benign (233)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (233).png"
+  },
+  {
+    "image_id": "benign (234)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (234).png"
+  },
+  {
+    "image_id": "benign (235)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (235).png"
+  },
+  {
+    "image_id": "benign (236)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (236).png"
+  },
+  {
+    "image_id": "benign (237)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (237).png"
+  },
+  {
+    "image_id": "benign (238)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (238).png"
+  },
+  {
+    "image_id": "benign (239)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (239).png"
+  },
+  {
+    "image_id": "benign (242)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (242).png"
+  },
+  {
+    "image_id": "benign (243)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (243).png"
+  },
+  {
+    "image_id": "benign (244)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (244).png"
+  },
+  {
+    "image_id": "benign (245)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (245).png"
+  },
+  {
+    "image_id": "benign (246)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (246).png"
+  },
+  {
+    "image_id": "benign (247)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (247).png"
+  },
+  {
+    "image_id": "benign (248)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (248).png"
+  },
+  {
+    "image_id": "benign (249)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (249).png"
+  },
+  {
+    "image_id": "benign (251)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (251).png"
+  },
+  {
+    "image_id": "benign (252)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (252).png"
+  },
+  {
+    "image_id": "benign (253)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (253).png"
+  },
+  {
+    "image_id": "benign (254)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (254).png"
+  },
+  {
+    "image_id": "benign (256)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (256).png"
+  },
+  {
+    "image_id": "benign (257)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (257).png"
+  },
+  {
+    "image_id": "benign (259)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (259).png"
+  },
+  {
+    "image_id": "benign (26)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (26).png"
+  },
+  {
+    "image_id": "benign (261)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (261).png"
+  },
+  {
+    "image_id": "benign (262)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (262).png"
+  },
+  {
+    "image_id": "benign (264)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (264).png"
+  },
+  {
+    "image_id": "benign (265)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (265).png"
+  },
+  {
+    "image_id": "benign (268)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (268).png"
+  },
+  {
+    "image_id": "benign (272)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (272).png"
+  },
+  {
+    "image_id": "benign (273)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (273).png"
+  },
+  {
+    "image_id": "benign (274)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (274).png"
+  },
+  {
+    "image_id": "benign (275)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (275).png"
+  },
+  {
+    "image_id": "benign (276)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (276).png"
+  },
+  {
+    "image_id": "benign (28)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (28).png"
+  },
+  {
+    "image_id": "benign (280)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (280).png"
+  },
+  {
+    "image_id": "benign (282)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (282).png"
+  },
+  {
+    "image_id": "benign (283)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (283).png"
+  },
+  {
+    "image_id": "benign (284)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (284).png"
+  },
+  {
+    "image_id": "benign (285)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (285).png"
+  },
+  {
+    "image_id": "benign (287)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (287).png"
+  },
+  {
+    "image_id": "benign (288)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (288).png"
+  },
+  {
+    "image_id": "benign (289)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (289).png"
+  },
+  {
+    "image_id": "benign (29)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (29).png"
+  },
+  {
+    "image_id": "benign (290)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (290).png"
+  },
+  {
+    "image_id": "benign (291)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (291).png"
+  },
+  {
+    "image_id": "benign (292)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (292).png"
+  },
+  {
+    "image_id": "benign (293)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (293).png"
+  },
+  {
+    "image_id": "benign (294)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (294).png"
+  },
+  {
+    "image_id": "benign (295)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (295).png"
+  },
+  {
+    "image_id": "benign (296)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (296).png"
+  },
+  {
+    "image_id": "benign (297)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (297).png"
+  },
+  {
+    "image_id": "benign (299)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (299).png"
+  },
+  {
+    "image_id": "benign (3)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (3).png"
+  },
+  {
+    "image_id": "benign (30)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (30).png"
+  },
+  {
+    "image_id": "benign (300)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (300).png"
+  },
+  {
+    "image_id": "benign (301)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (301).png"
+  },
+  {
+    "image_id": "benign (302)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (302).png"
+  },
+  {
+    "image_id": "benign (303)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (303).png"
+  },
+  {
+    "image_id": "benign (304)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (304).png"
+  },
+  {
+    "image_id": "benign (305)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (305).png"
+  },
+  {
+    "image_id": "benign (306)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (306).png"
+  },
+  {
+    "image_id": "benign (307)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (307).png"
+  },
+  {
+    "image_id": "benign (308)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (308).png"
+  },
+  {
+    "image_id": "benign (31)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (31).png"
+  },
+  {
+    "image_id": "benign (310)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (310).png"
+  },
+  {
+    "image_id": "benign (311)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (311).png"
+  },
+  {
+    "image_id": "benign (312)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (312).png"
+  },
+  {
+    "image_id": "benign (313)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (313).png"
+  },
+  {
+    "image_id": "benign (314)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (314).png"
+  },
+  {
+    "image_id": "benign (315)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (315).png"
+  },
+  {
+    "image_id": "benign (316)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (316).png"
+  },
+  {
+    "image_id": "benign (317)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (317).png"
+  },
+  {
+    "image_id": "benign (318)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (318).png"
+  },
+  {
+    "image_id": "benign (32)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (32).png"
+  },
+  {
+    "image_id": "benign (320)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (320).png"
+  },
+  {
+    "image_id": "benign (321)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (321).png"
+  },
+  {
+    "image_id": "benign (328)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (328).png"
+  },
+  {
+    "image_id": "benign (329)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (329).png"
+  },
+  {
+    "image_id": "benign (330)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (330).png"
+  },
+  {
+    "image_id": "benign (334)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (334).png"
+  },
+  {
+    "image_id": "benign (335)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (335).png"
+  },
+  {
+    "image_id": "benign (336)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (336).png"
+  },
+  {
+    "image_id": "benign (337)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (337).png"
+  },
+  {
+    "image_id": "benign (338)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (338).png"
+  },
+  {
+    "image_id": "benign (339)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (339).png"
+  },
+  {
+    "image_id": "benign (34)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (34).png"
+  },
+  {
+    "image_id": "benign (340)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (340).png"
+  },
+  {
+    "image_id": "benign (343)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (343).png"
+  },
+  {
+    "image_id": "benign (344)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (344).png"
+  },
+  {
+    "image_id": "benign (345)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (345).png"
+  },
+  {
+    "image_id": "benign (347)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (347).png"
+  },
+  {
+    "image_id": "benign (349)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (349).png"
+  },
+  {
+    "image_id": "benign (35)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (35).png"
+  },
+  {
+    "image_id": "benign (350)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (350).png"
+  },
+  {
+    "image_id": "benign (351)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (351).png"
+  },
+  {
+    "image_id": "benign (352)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (352).png"
+  },
+  {
+    "image_id": "benign (354)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (354).png"
+  },
+  {
+    "image_id": "benign (359)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (359).png"
+  },
+  {
+    "image_id": "benign (36)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (36).png"
+  },
+  {
+    "image_id": "benign (360)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (360).png"
+  },
+  {
+    "image_id": "benign (361)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (361).png"
+  },
+  {
+    "image_id": "benign (362)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (362).png"
+  },
+  {
+    "image_id": "benign (363)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (363).png"
+  },
+  {
+    "image_id": "benign (364)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (364).png"
+  },
+  {
+    "image_id": "benign (365)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (365).png"
+  },
+  {
+    "image_id": "benign (366)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (366).png"
+  },
+  {
+    "image_id": "benign (367)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (367).png"
+  },
+  {
+    "image_id": "benign (368)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (368).png"
+  },
+  {
+    "image_id": "benign (369)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (369).png"
+  },
+  {
+    "image_id": "benign (37)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (37).png"
+  },
+  {
+    "image_id": "benign (371)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (371).png"
+  },
+  {
+    "image_id": "benign (372)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (372).png"
+  },
+  {
+    "image_id": "benign (374)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (374).png"
+  },
+  {
+    "image_id": "benign (377)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (377).png"
+  },
+  {
+    "image_id": "benign (378)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (378).png"
+  },
+  {
+    "image_id": "benign (379)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (379).png"
+  },
+  {
+    "image_id": "benign (38)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (38).png"
+  },
+  {
+    "image_id": "benign (380)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (380).png"
+  },
+  {
+    "image_id": "benign (384)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (384).png"
+  },
+  {
+    "image_id": "benign (385)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (385).png"
+  },
+  {
+    "image_id": "benign (386)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (386).png"
+  },
+  {
+    "image_id": "benign (388)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (388).png"
+  },
+  {
+    "image_id": "benign (39)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (39).png"
+  },
+  {
+    "image_id": "benign (392)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (392).png"
+  },
+  {
+    "image_id": "benign (393)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (393).png"
+  },
+  {
+    "image_id": "benign (394)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (394).png"
+  },
+  {
+    "image_id": "benign (397)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (397).png"
+  },
+  {
+    "image_id": "benign (4)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (4).png"
+  },
+  {
+    "image_id": "benign (40)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (40).png"
+  },
+  {
+    "image_id": "benign (400)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (400).png"
+  },
+  {
+    "image_id": "benign (404)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (404).png"
+  },
+  {
+    "image_id": "benign (405)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (405).png"
+  },
+  {
+    "image_id": "benign (407)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (407).png"
+  },
+  {
+    "image_id": "benign (408)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (408).png"
+  },
+  {
+    "image_id": "benign (412)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (412).png"
+  },
+  {
+    "image_id": "benign (413)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (413).png"
+  },
+  {
+    "image_id": "benign (415)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (415).png"
+  },
+  {
+    "image_id": "benign (416)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (416).png"
+  },
+  {
+    "image_id": "benign (417)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (417).png"
+  },
+  {
+    "image_id": "benign (419)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (419).png"
+  },
+  {
+    "image_id": "benign (420)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (420).png"
+  },
+  {
+    "image_id": "benign (421)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (421).png"
+  },
+  {
+    "image_id": "benign (423)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (423).png"
+  },
+  {
+    "image_id": "benign (424)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (424).png"
+  },
+  {
+    "image_id": "benign (425)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (425).png"
+  },
+  {
+    "image_id": "benign (426)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (426).png"
+  },
+  {
+    "image_id": "benign (427)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (427).png"
+  },
+  {
+    "image_id": "benign (428)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (428).png"
+  },
+  {
+    "image_id": "benign (429)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (429).png"
+  },
+  {
+    "image_id": "benign (43)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (43).png"
+  },
+  {
+    "image_id": "benign (430)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (430).png"
+  },
+  {
+    "image_id": "benign (431)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (431).png"
+  },
+  {
+    "image_id": "benign (432)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (432).png"
+  },
+  {
+    "image_id": "benign (435)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (435).png"
+  },
+  {
+    "image_id": "benign (436)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (436).png"
+  },
+  {
+    "image_id": "benign (437)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (437).png"
+  },
+  {
+    "image_id": "benign (45)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (45).png"
+  },
+  {
+    "image_id": "benign (47)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (47).png"
+  },
+  {
+    "image_id": "benign (48)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (48).png"
+  },
+  {
+    "image_id": "benign (50)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (50).png"
+  },
+  {
+    "image_id": "benign (51)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (51).png"
+  },
+  {
+    "image_id": "benign (52)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (52).png"
+  },
+  {
+    "image_id": "benign (53)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (53).png"
+  },
+  {
+    "image_id": "benign (54)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (54).png"
+  },
+  {
+    "image_id": "benign (55)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (55).png"
+  },
+  {
+    "image_id": "benign (57)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (57).png"
+  },
+  {
+    "image_id": "benign (58)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (58).png"
+  },
+  {
+    "image_id": "benign (59)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (59).png"
+  },
+  {
+    "image_id": "benign (60)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (60).png"
+  },
+  {
+    "image_id": "benign (61)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (61).png"
+  },
+  {
+    "image_id": "benign (62)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (62).png"
+  },
+  {
+    "image_id": "benign (63)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (63).png"
+  },
+  {
+    "image_id": "benign (64)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (64).png"
+  },
+  {
+    "image_id": "benign (65)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (65).png"
+  },
+  {
+    "image_id": "benign (69)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (69).png"
+  },
+  {
+    "image_id": "benign (71)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (71).png"
+  },
+  {
+    "image_id": "benign (72)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (72).png"
+  },
+  {
+    "image_id": "benign (73)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (73).png"
+  },
+  {
+    "image_id": "benign (74)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (74).png"
+  },
+  {
+    "image_id": "benign (75)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (75).png"
+  },
+  {
+    "image_id": "benign (77)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (77).png"
+  },
+  {
+    "image_id": "benign (78)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (78).png"
+  },
+  {
+    "image_id": "benign (79)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (79).png"
+  },
+  {
+    "image_id": "benign (80)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (80).png"
+  },
+  {
+    "image_id": "benign (82)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (82).png"
+  },
+  {
+    "image_id": "benign (84)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (84).png"
+  },
+  {
+    "image_id": "benign (85)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (85).png"
+  },
+  {
+    "image_id": "benign (86)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (86).png"
+  },
+  {
+    "image_id": "benign (87)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (87).png"
+  },
+  {
+    "image_id": "benign (89)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (89).png"
+  },
+  {
+    "image_id": "benign (90)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (90).png"
+  },
+  {
+    "image_id": "benign (92)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (92).png"
+  },
+  {
+    "image_id": "benign (94)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (94).png"
+  },
+  {
+    "image_id": "benign (95)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (95).png"
+  },
+  {
+    "image_id": "benign (96)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (96).png"
+  },
+  {
+    "image_id": "benign (99)",
+    "label": "benign",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/benign/benign (99).png"
+  },
+  {
+    "image_id": "malignant (1)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (1).png"
+  },
+  {
+    "image_id": "malignant (10)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (10).png"
+  },
+  {
+    "image_id": "malignant (100)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (100).png"
+  },
+  {
+    "image_id": "malignant (101)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (101).png"
+  },
+  {
+    "image_id": "malignant (104)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (104).png"
+  },
+  {
+    "image_id": "malignant (106)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (106).png"
+  },
+  {
+    "image_id": "malignant (107)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (107).png"
+  },
+  {
+    "image_id": "malignant (108)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (108).png"
+  },
+  {
+    "image_id": "malignant (109)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (109).png"
+  },
+  {
+    "image_id": "malignant (110)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (110).png"
+  },
+  {
+    "image_id": "malignant (112)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (112).png"
+  },
+  {
+    "image_id": "malignant (113)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (113).png"
+  },
+  {
+    "image_id": "malignant (115)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (115).png"
+  },
+  {
+    "image_id": "malignant (116)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (116).png"
+  },
+  {
+    "image_id": "malignant (118)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (118).png"
+  },
+  {
+    "image_id": "malignant (119)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (119).png"
+  },
+  {
+    "image_id": "malignant (12)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (12).png"
+  },
+  {
+    "image_id": "malignant (120)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (120).png"
+  },
+  {
+    "image_id": "malignant (121)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (121).png"
+  },
+  {
+    "image_id": "malignant (122)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (122).png"
+  },
+  {
+    "image_id": "malignant (124)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (124).png"
+  },
+  {
+    "image_id": "malignant (126)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (126).png"
+  },
+  {
+    "image_id": "malignant (127)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (127).png"
+  },
+  {
+    "image_id": "malignant (128)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (128).png"
+  },
+  {
+    "image_id": "malignant (129)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (129).png"
+  },
+  {
+    "image_id": "malignant (13)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (13).png"
+  },
+  {
+    "image_id": "malignant (130)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (130).png"
+  },
+  {
+    "image_id": "malignant (132)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (132).png"
+  },
+  {
+    "image_id": "malignant (133)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (133).png"
+  },
+  {
+    "image_id": "malignant (134)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (134).png"
+  },
+  {
+    "image_id": "malignant (136)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (136).png"
+  },
+  {
+    "image_id": "malignant (137)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (137).png"
+  },
+  {
+    "image_id": "malignant (139)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (139).png"
+  },
+  {
+    "image_id": "malignant (140)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (140).png"
+  },
+  {
+    "image_id": "malignant (141)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (141).png"
+  },
+  {
+    "image_id": "malignant (143)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (143).png"
+  },
+  {
+    "image_id": "malignant (144)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (144).png"
+  },
+  {
+    "image_id": "malignant (146)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (146).png"
+  },
+  {
+    "image_id": "malignant (148)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (148).png"
+  },
+  {
+    "image_id": "malignant (152)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (152).png"
+  },
+  {
+    "image_id": "malignant (156)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (156).png"
+  },
+  {
+    "image_id": "malignant (159)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (159).png"
+  },
+  {
+    "image_id": "malignant (160)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (160).png"
+  },
+  {
+    "image_id": "malignant (161)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (161).png"
+  },
+  {
+    "image_id": "malignant (163)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (163).png"
+  },
+  {
+    "image_id": "malignant (166)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (166).png"
+  },
+  {
+    "image_id": "malignant (167)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (167).png"
+  },
+  {
+    "image_id": "malignant (168)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (168).png"
+  },
+  {
+    "image_id": "malignant (17)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (17).png"
+  },
+  {
+    "image_id": "malignant (170)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (170).png"
+  },
+  {
+    "image_id": "malignant (171)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (171).png"
+  },
+  {
+    "image_id": "malignant (172)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (172).png"
+  },
+  {
+    "image_id": "malignant (173)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (173).png"
+  },
+  {
+    "image_id": "malignant (174)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (174).png"
+  },
+  {
+    "image_id": "malignant (175)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (175).png"
+  },
+  {
+    "image_id": "malignant (176)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (176).png"
+  },
+  {
+    "image_id": "malignant (177)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (177).png"
+  },
+  {
+    "image_id": "malignant (178)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (178).png"
+  },
+  {
+    "image_id": "malignant (179)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (179).png"
+  },
+  {
+    "image_id": "malignant (18)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (18).png"
+  },
+  {
+    "image_id": "malignant (180)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (180).png"
+  },
+  {
+    "image_id": "malignant (181)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (181).png"
+  },
+  {
+    "image_id": "malignant (182)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (182).png"
+  },
+  {
+    "image_id": "malignant (183)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (183).png"
+  },
+  {
+    "image_id": "malignant (185)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (185).png"
+  },
+  {
+    "image_id": "malignant (186)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (186).png"
+  },
+  {
+    "image_id": "malignant (187)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (187).png"
+  },
+  {
+    "image_id": "malignant (188)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (188).png"
+  },
+  {
+    "image_id": "malignant (189)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (189).png"
+  },
+  {
+    "image_id": "malignant (190)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (190).png"
+  },
+  {
+    "image_id": "malignant (192)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (192).png"
+  },
+  {
+    "image_id": "malignant (193)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (193).png"
+  },
+  {
+    "image_id": "malignant (194)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (194).png"
+  },
+  {
+    "image_id": "malignant (197)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (197).png"
+  },
+  {
+    "image_id": "malignant (199)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (199).png"
+  },
+  {
+    "image_id": "malignant (200)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (200).png"
+  },
+  {
+    "image_id": "malignant (201)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (201).png"
+  },
+  {
+    "image_id": "malignant (202)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (202).png"
+  },
+  {
+    "image_id": "malignant (205)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (205).png"
+  },
+  {
+    "image_id": "malignant (206)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (206).png"
+  },
+  {
+    "image_id": "malignant (207)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (207).png"
+  },
+  {
+    "image_id": "malignant (208)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (208).png"
+  },
+  {
+    "image_id": "malignant (209)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (209).png"
+  },
+  {
+    "image_id": "malignant (22)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (22).png"
+  },
+  {
+    "image_id": "malignant (23)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (23).png"
+  },
+  {
+    "image_id": "malignant (24)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (24).png"
+  },
+  {
+    "image_id": "malignant (25)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (25).png"
+  },
+  {
+    "image_id": "malignant (26)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (26).png"
+  },
+  {
+    "image_id": "malignant (27)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (27).png"
+  },
+  {
+    "image_id": "malignant (28)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (28).png"
+  },
+  {
+    "image_id": "malignant (29)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (29).png"
+  },
+  {
+    "image_id": "malignant (3)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (3).png"
+  },
+  {
+    "image_id": "malignant (31)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (31).png"
+  },
+  {
+    "image_id": "malignant (32)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (32).png"
+  },
+  {
+    "image_id": "malignant (33)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (33).png"
+  },
+  {
+    "image_id": "malignant (34)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (34).png"
+  },
+  {
+    "image_id": "malignant (36)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (36).png"
+  },
+  {
+    "image_id": "malignant (37)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (37).png"
+  },
+  {
+    "image_id": "malignant (38)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (38).png"
+  },
+  {
+    "image_id": "malignant (39)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (39).png"
+  },
+  {
+    "image_id": "malignant (40)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (40).png"
+  },
+  {
+    "image_id": "malignant (42)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (42).png"
+  },
+  {
+    "image_id": "malignant (43)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (43).png"
+  },
+  {
+    "image_id": "malignant (44)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (44).png"
+  },
+  {
+    "image_id": "malignant (45)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (45).png"
+  },
+  {
+    "image_id": "malignant (46)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (46).png"
+  },
+  {
+    "image_id": "malignant (50)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (50).png"
+  },
+  {
+    "image_id": "malignant (52)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (52).png"
+  },
+  {
+    "image_id": "malignant (53)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (53).png"
+  },
+  {
+    "image_id": "malignant (54)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (54).png"
+  },
+  {
+    "image_id": "malignant (55)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (55).png"
+  },
+  {
+    "image_id": "malignant (57)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (57).png"
+  },
+  {
+    "image_id": "malignant (60)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (60).png"
+  },
+  {
+    "image_id": "malignant (61)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (61).png"
+  },
+  {
+    "image_id": "malignant (62)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (62).png"
+  },
+  {
+    "image_id": "malignant (63)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (63).png"
+  },
+  {
+    "image_id": "malignant (64)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (64).png"
+  },
+  {
+    "image_id": "malignant (67)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (67).png"
+  },
+  {
+    "image_id": "malignant (68)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (68).png"
+  },
+  {
+    "image_id": "malignant (69)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (69).png"
+  },
+  {
+    "image_id": "malignant (7)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (7).png"
+  },
+  {
+    "image_id": "malignant (70)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (70).png"
+  },
+  {
+    "image_id": "malignant (71)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (71).png"
+  },
+  {
+    "image_id": "malignant (72)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (72).png"
+  },
+  {
+    "image_id": "malignant (75)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (75).png"
+  },
+  {
+    "image_id": "malignant (76)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (76).png"
+  },
+  {
+    "image_id": "malignant (78)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (78).png"
+  },
+  {
+    "image_id": "malignant (79)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (79).png"
+  },
+  {
+    "image_id": "malignant (8)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (8).png"
+  },
+  {
+    "image_id": "malignant (82)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (82).png"
+  },
+  {
+    "image_id": "malignant (84)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (84).png"
+  },
+  {
+    "image_id": "malignant (86)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (86).png"
+  },
+  {
+    "image_id": "malignant (87)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (87).png"
+  },
+  {
+    "image_id": "malignant (88)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (88).png"
+  },
+  {
+    "image_id": "malignant (89)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (89).png"
+  },
+  {
+    "image_id": "malignant (9)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (9).png"
+  },
+  {
+    "image_id": "malignant (90)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (90).png"
+  },
+  {
+    "image_id": "malignant (91)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (91).png"
+  },
+  {
+    "image_id": "malignant (92)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (92).png"
+  },
+  {
+    "image_id": "malignant (95)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (95).png"
+  },
+  {
+    "image_id": "malignant (96)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (96).png"
+  },
+  {
+    "image_id": "malignant (97)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (97).png"
+  },
+  {
+    "image_id": "malignant (98)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (98).png"
+  },
+  {
+    "image_id": "malignant (99)",
+    "label": "malignant",
+    "image_path": "/Users/mulatyazewchekol/Documents/My_Projects/Healthcare_Projects/Breast_Cancer_Detection/dataset/BUSI_Jpeg/malignant/malignant (99).png"
+  }
+]
